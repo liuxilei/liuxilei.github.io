@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="liuxilei 蓝色味道丶" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta property="og:type" content="article">
+<meta property="og:title" content="锋利的jQuery-DOM操作">
+<meta property="og:url" content="https://liuxilei.github.io/2017/12/11/锋利的jQuery-DOM操作/index.html">
+<meta property="og:site_name" content="蓝色味道丶">
+<meta property="og:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.blog.csdn.net/20171211174901673?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20171211174921183?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20171213123128344?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-05-30T07:22:37.162Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="锋利的jQuery-DOM操作">
+<meta name="twitter:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20171211174901673?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liuxilei.github.io/2017/12/11/锋利的jQuery-DOM操作/"/>
+
+
+
+
+
+  <title>锋利的jQuery-DOM操作 | 蓝色味道丶</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝色味道丶</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuxilei.github.io/2017/12/11/锋利的jQuery-DOM操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝色味道丶">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝色味道丶">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">锋利的jQuery-DOM操作</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-11T17:48:01+08:00">
+                2017-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>我的世界会有一束光，而我永远都会在最初的地方等它。<br>亦如最初的自己</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="jQuery中的DOM操作"><a href="#jQuery中的DOM操作" class="headerlink" title="jQuery中的DOM操作"></a><strong>jQuery中的DOM操作</strong></h2><h3 id="查找节点"><a href="#查找节点" class="headerlink" title="查找节点"></a><strong>查找节点</strong></h3><h4 id="1-查找元素节点"><a href="#1-查找元素节点" class="headerlink" title="1.查找元素节点"></a>1.查找元素节点</h4><p>获取元素点并打印出它的文本内容。<br>html代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;dom&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p title=&quot;选择喜欢的。&quot;&gt;你最喜欢的水果是？&lt;/p&gt;  </span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li title=&apos;苹果&apos;&gt;苹果&lt;/li&gt;</span><br><span class="line">        &lt;li title=&apos;橘子&apos;&gt;橘子&lt;/li&gt;</span><br><span class="line">        &lt;li title=&apos;菠萝&apos;&gt;菠萝&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt; </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var $li = $(&quot;ul li:eq(1)&quot;);</span><br><span class="line">var li_txt = $li.text();</span><br><span class="line">console.log(li_txt);</span><br></pre></td></tr></table></figure>
+<h4 id="2-查找属性节点"><a href="#2-查找属性节点" class="headerlink" title="2.查找属性节点"></a>2.查找属性节点</h4><p>利用jQuery选择器查找到需要的元素之后，就可以使用attr()方法来获取它的各种属性值，attr()方法的参数可以是一个，也可以是两个，当参数是一个时，则时要查询的属性的名字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var $para = $(&quot;p&quot;);</span><br><span class="line">var p_txt = $para.attr(&quot;title&quot;);</span><br><span class="line">console.log(p_txt);</span><br></pre></td></tr></table></figure>
+<h3 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h3><h4 id="创建元素节点"><a href="#创建元素节点" class="headerlink" title="创建元素节点"></a>创建元素节点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var $li_1 = $(&quot;&lt;li&gt;&lt;/li&gt;&quot;);</span><br><span class="line">var $li_2 = $(&quot;&lt;li&gt;&lt;/li&gt;&quot;);</span><br><span class="line">$(&quot;ul&quot;).append($li_1);</span><br><span class="line">$(&quot;ul&quot;).append($li_2);</span><br></pre></td></tr></table></figure>
+<h4 id="创建文本节点"><a href="#创建文本节点" class="headerlink" title="创建文本节点"></a>创建文本节点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var $li_1 = $(&quot;&lt;li&gt;香蕉&lt;/li&gt;&quot;);</span><br><span class="line">var $li_2 = $(&quot;&lt;li&gt;雪梨&lt;/li&gt;&quot;);</span><br><span class="line">$(&quot;ul&quot;).append($li_1);</span><br><span class="line">$(&quot;ul&quot;).append($li_2);</span><br></pre></td></tr></table></figure>
+<h4 id="创建属性节点"><a href="#创建属性节点" class="headerlink" title="创建属性节点"></a>创建属性节点</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var $li_1 = $(&quot;&lt;li title=&apos;香蕉&apos;&gt;香蕉&lt;/li&gt;&quot;);</span><br><span class="line">var $li_2 = $(&quot;&lt;li title=&apos;雪梨&apos;&gt;雪梨&lt;/li&gt;&quot;);</span><br><span class="line">$(&quot;ul&quot;).append($li_1);</span><br><span class="line">$(&quot;ul&quot;).append($li_2);</span><br></pre></td></tr></table></figure>
+<h3 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a><strong>插入节点</strong></h3><pre><code>动态创建HTML元素并没有实际用处，还需要将新创建的元素插入文档中，将新创建的节点插入文档最简单的办法是，让它成为这个文档的某个节点的子节点，前面使用了一个插入节点的方法append()，它会在元素内部追加新创建的内容。
+</code></pre><p><img src="http://img.blog.csdn.net/20171211174901673?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><img src="http://img.blog.csdn.net/20171211174921183?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a><strong>删除节点</strong></h3><pre><code>如果文档中某一个元素多余，那么应当将其删除。jQuery提供了两种删除节点的方法，remove()和empty()。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;ul li:eq(1)&quot;).remove();</span><br></pre></td></tr></table></figure>
+<p>当某个节点用remove()方法删除后，该节点所包含的所有后代节点将同时被删除。这个方法的返回值是一个指向已被删除的节点的引用，因此可以在以后再使用这些元素。</p>
+<p>empty()方法</p>
+<pre><code>严格来讲，empty()方法并不是删除节点，而是清空节点，它能清空元素中所有的后代节点。
+</code></pre><h3 id="复制节点"><a href="#复制节点" class="headerlink" title="复制节点"></a><strong>复制节点</strong></h3><pre><code>复制节点也是常用的DOM操作之一，例如某个购物网站的效果，用户不仅可以通过单击商品下方的&quot;选择&quot;按钮购买相应的产品，也可以通过鼠标拖动商品并将其放到购物车中。这个商品拖放功能就是用的复制节点。将用户选择的商品所处的节点元素复制一次，并将其跟随鼠标移动，从而达到一下购物车效果。
+</code></pre><p>  clone()方法，在clone()方法中传递了一个参数true，它的含义是复制元素的同时复制元素所绑定的事件。因此该元素的副本也同样具有复制功能。</p>
+<h3 id="替换节点"><a href="#替换节点" class="headerlink" title="替换节点"></a><strong>替换节点</strong></h3><p>如果要替换某个节点，jQuery提供了相应的方法，即replaceWith()和replaceAll()。<br>replaceWith()方法的作用是将所有匹配的元素都替换成指定的HTML或者DOM元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).repalceWith(&quot;&lt;strong&gt;你最不喜欢的事？&lt;/strong&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<p>也可以使用jQuery中另一个方法replaceAll()来实现，该方法与replaceWith()方法的作用相同，只是颠倒了replaceWith()操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;&lt;strong&gt;你最不喜欢的事是？&lt;/strong&gt;&quot;).replaceAll(&quot;p&quot;);</span><br></pre></td></tr></table></figure>
+<h4 id="包裹节点"><a href="#包裹节点" class="headerlink" title="包裹节点"></a><strong>包裹节点</strong></h4><p>   如果要将某个节点用其他标记包裹起来，jQuery提供了相应的方法，即wrap()。该方法对于需要在文档中插入额外的结构化标记非常有用，而且它不会破坏原始文档的语义。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;strong&quot;).wrap(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<p>得到的结果如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;b&gt;&lt;strong title=&quot;选择你最喜欢的水果.&quot;&gt;&lt;/strong&gt;&lt;/b&gt;</span><br></pre></td></tr></table></figure>
+<p>包裹节点操作还有其他两个方法，即wrapAll()和wrapInner()。<br>1.wrapAll方法<br>该方法会将所有匹配的元素用一个元素来包裹。它不同于wrap()方法，wrap()方法是将所有的元素进行单独的包裹。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;strong title=&quot;选择你最喜欢的水果.&quot;&gt;&lt;/strong&gt;</span><br><span class="line">&lt;strong title=&quot;选择你最喜欢的水果.&quot;&gt;&lt;/strong&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;strong&quot;).wrapAll(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<p>效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;b&gt;</span><br><span class="line">&lt;strong title=&quot;选择你最喜欢的水果.&quot;&gt;&lt;/strong&gt;</span><br><span class="line">&lt;strong title=&quot;选择你最喜欢的水果.&quot;&gt;&lt;/strong&gt;</span><br><span class="line">&lt;/b&gt;</span><br></pre></td></tr></table></figure>
+<p>2.wrapInner()方法<br>该方法将每一个匹配的元素的子内容用其他结构化的标记包裹起来。例如可以使用它来包裹<strong>标签的子内容。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;strong&quot;).wrapInner(&quot;&lt;b&gt;&lt;/b&gt;&quot;);</span><br></pre></td></tr></table></figure>
+<p>效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;strong title=&quot;选择你最喜欢的水果.&quot;&gt;&lt;b&gt;你最喜欢的水果是？&lt;/b&gt;&lt;/strong&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a><strong>属性操作</strong></h3><p>在jQuery中，用attr()方法来获取和设置元素属性，removeAttr()方法来删除元素属性。</p>
+<h4 id="1-获取属性和设置属性"><a href="#1-获取属性和设置属性" class="headerlink" title="1.获取属性和设置属性"></a>1.获取属性和设置属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var $para = $(&quot;p&quot;);</span><br><span class="line">var p_txt = $para.attr(&quot;title&quot;);  //获取&lt;p&gt;元素节点属性title</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).attr(&quot;title&quot;,&quot;your title&quot;);  //设置单个的属性值</span><br></pre></td></tr></table></figure>
+<p>如果要一次性设置多个属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).attr(&#123;&quot;title&quot;:&quot;your title&quot;,&quot;name&quot;:&quot;test&quot;&#125;); //将一个&quot;名/值&quot;形式的对象设置为匹配元素的属性</span><br></pre></td></tr></table></figure>
+<p><strong>jQuery中的很多方法都是同一个函数实现获取(getter)和设置(setter)的，例如上面的attr()方法，既能设置元素属性的值，也能获取元素属性的值，类似的还有html()、text()、height()、width()、val()和css()方法。</strong></p>
+<h4 id="2-删除属性"><a href="#2-删除属性" class="headerlink" title="2.删除属性"></a>2.删除属性</h4><p>在某些情况下，需要删除文档中某个元素的特定属性，可以使用removeAttr()方法来完成该任务。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p title=&quot;选择你最喜欢的水果.&quot;&gt;你最喜欢的水果是？&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).removeAttr(&quot;title&quot;);</span><br></pre></td></tr></table></figure>
+<p>效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;你最喜欢的水果是？&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a><strong>样式操作</strong></h3><h4 id="1-获取样式和设置样式"><a href="#1-获取样式和设置样式" class="headerlink" title="1.获取样式和设置样式"></a><strong>1.获取样式和设置样式</strong></h4><p>HTML代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;myClass&quot; title=&quot;选择你最喜欢的水果.&quot;&gt;你做喜欢的水果是？&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，class也是p元素的属性，因此获取class和设置class都可以使用attr()来完成。<br>例如使用attr()方法来获取p元素的class，jQuery代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var p_class = $(&quot;p&quot;).attr(&quot;class&quot;);</span><br></pre></td></tr></table></figure>
+<p>也可以使用attr()方法来设置p元素的class，jQuery代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).attr(&quot;class&quot;,&quot;high&quot;);</span><br></pre></td></tr></table></figure>
+<p>在大多数情况下，它是将原来的class替换为新的class，而不是在原来的基础上追加新的class。<br>运行代码后，上面的HTML代码将变为如下结构:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;high&quot; title=&quot;选择你最喜欢的水果.&quot;&gt;你最喜欢的水果是？&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="2-追加样式"><a href="#2-追加样式" class="headerlink" title="2.追加样式"></a><strong>2.追加样式</strong></h4><p>jQuery提供了专门的addClass()方式来追加样式。为了使例子更容易理解，首先在style标签里添加另一组样式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.high &#123;</span><br><span class="line">    font-weight:bold;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">.another &#123;</span><br><span class="line">    font-style:italic;</span><br><span class="line">    color:blue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>然后在网页中添加一个“追加class类”的按钮，按钮的事件如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;input:eq(2)&quot;).click(function() &#123;</span><br><span class="line">    $(&quot;p&quot;).addClass(&quot;another&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.blog.csdn.net/20171213123128344?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h4 id="3-移除样式"><a href="#3-移除样式" class="headerlink" title="3.移除样式"></a><strong>3.移除样式</strong></h4><p>要删除class的某个值，那么可以使用与addClass()方法相反removeClass()方法来完成，它的作用是从匹配的元素中删除全部或者指定的class。<br>另外，还可以利用removeClass()方法的一个特性来完成同样的效果。当它不带参数时，会将class的值全部删除。</p>
+<h4 id="4-切换样式"><a href="#4-切换样式" class="headerlink" title="4.切换样式"></a><strong>4.切换样式</strong></h4><p>在之前的案例研究中介绍了一个方法，即toggle(),jQuery代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$toggleBtn.toggle(function() &#123;    </span><br><span class="line">           //显示元素       代码3</span><br><span class="line">    &#125;,function() &#123;</span><br><span class="line">           //隐藏元素       代码4</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>toggle()方法此处的作用是交替执行代码3和代码4两个函数，如果元素原来是显示的，则隐藏它；如果元素原来是隐藏的，则显示它。此时，toggle()方法主要是控制行为上的重复切换。<br>另外jQuery还提供了一个toggleClass()方法控制样式上的重复切换。如果类名存在则删除它，如果类名不存在则添加它。</p>
+<h4 id="5-判断是否含有某个样式"><a href="#5-判断是否含有某个样式" class="headerlink" title="5.判断是否含有某个样式"></a><strong>5.判断是否含有某个样式</strong></h4><p>hasClass()可以用来判断元素中是否含有某个class，如果有，则返回true，否则返回false。</p>
+<h3 id="设置和获取HTML、文本和值"><a href="#设置和获取HTML、文本和值" class="headerlink" title="设置和获取HTML、文本和值"></a><strong>设置和获取HTML、文本和值</strong></h3><h4 id="1-html-方法"><a href="#1-html-方法" class="headerlink" title="*1.html()方法**"></a>*1.html()方法**</h4><p>此方法类似于JavaScript中的innerHTML属性，可以用来读取或这设置某个元素中的HTML内容。<br><strong>html()方法可以用于XHTML文档，但不能用于XML文档</strong></p>
+<h4 id="2-text-方法"><a href="#2-text-方法" class="headerlink" title="2.text()方法"></a><strong>2.text()方法</strong></h4><p>此方法类似于JavaScript中的innerText属性，可以用来读取或者设置某个元素中的文本内容。<br><strong>1.JavaScript中的innerText属性并不能在Firefox浏览器下运行，而jQuery的text()方法支持所有的浏览器。</strong><br><strong>2.text()方法对HTML文档和XML文档都有效</strong></p>
+<h4 id="3-val-方法"><a href="#3-val-方法" class="headerlink" title="3.val()方法"></a><strong>3.val()方法</strong></h4><p>此方法类似于JavaScript中的value属性，可以用来设置和获取元素的值。无论元素是文本框、还是下拉列表还是单选框。它都可以返回元素的值。如果元素为多选，则返回一个包含所有选择的值的数组。<br>val()方法还有另外一个用处，就是它能使select（下拉列表框）、checkbox(多选框)和radio(单选框)相应的选项被选中，在表单操作中会经常用到。</p>
+<h3 id="遍历节点"><a href="#遍历节点" class="headerlink" title="遍历节点"></a><strong>遍历节点</strong></h3><h4 id="1-children-方法"><a href="#1-children-方法" class="headerlink" title="1.children()方法"></a><strong>1.children()方法</strong></h4><p>该方法用于取得匹配元素的子元素集合。<br><strong>children()方法只考虑子元素而不考虑任何后代元素</strong></p>
+<h4 id="2-next"><a href="#2-next" class="headerlink" title="2.next()"></a><strong>2.next()</strong></h4><p>该方法用于取得匹配元素后面紧邻的同辈元素。</p>
+<h4 id="3-prev"><a href="#3-prev" class="headerlink" title="3.prev()"></a><strong>3.prev()</strong></h4><p>该方法用于取得匹配元素前面紧邻的同辈元素。</p>
+<h4 id="4-siblings-方法"><a href="#4-siblings-方法" class="headerlink" title="4.siblings()方法"></a><strong>4.siblings()方法</strong></h4><p>该方法用于取得匹配元素前后所有的同辈元素。</p>
+<h4 id="5-closest"><a href="#5-closest" class="headerlink" title="5.closest()"></a><strong>5.closest()</strong></h4><p>它用来取得最近的匹配元素。首先检查当前元素是否匹配，如果匹配则直接返回元素本身。如果不匹配则向上查找父元素，逐级向上直到找到匹配选择器的元素，如果什么都没找到则返回一个空的jQuery对象。</p>
+<h3 id="CSS-DOM操作"><a href="#CSS-DOM操作" class="headerlink" title="CSS-DOM操作"></a><strong>CSS-DOM操作</strong></h3><pre><code>CSS-DOM技术简单来说就是读取和设置style对象的各种属性。style属性很有用，但最大不足使无法通过它来提取到通过外部CSS设置的样式信息，然而在jQuery中，这些都是非常简单的。
+可以直接利用css()方法获取元素的样式属性
+在jQuery中还有另外一种方法也可以获取元素的高度，即height()。它的作用是取得匹配元素当前计算的高度值(px)。
+</code></pre><p><strong>1.在jQuery1.2版本以后的height()方法可以用来获取window和document的高度。</strong><br><strong>2.两者的区别是：css()方法获取的高度值与样式的设置有关，可能会得到”auto”,也可能得到”10px”之类的字符串；而height()方法获取的高度值则是元素在页面中的实际高度，与样式的设置无关，并且不带单位。</strong><br>         与height()方法对应的还有一个width()方法，它可以取得匹配元素的宽度值。</p>
+<h4 id="1-offset方法"><a href="#1-offset方法" class="headerlink" title="1.offset方法"></a><strong>1.offset方法</strong></h4><p>   它的作用是获取元素在当前视窗的相对偏移，其中返回的对象包含两个属性，即top和left，它只对可见元素有效。</p>
+<h4 id="2-position方法"><a href="#2-position方法" class="headerlink" title="2.position方法"></a><strong>2.position方法</strong></h4><p> 它的作用是获取元素相对与最近一个position样式属性设置为relative和absolute的祖父节点的相对偏移，与offset()一样，它返回的对象也包括两个属性，即top和left。</p>
+<h4 id="3-scrollTop-方法和scrollLeft-方法"><a href="#3-scrollTop-方法和scrollLeft-方法" class="headerlink" title="3.scrollTop()方法和scrollLeft()方法"></a><strong>3.scrollTop()方法和scrollLeft()方法</strong></h4><p> 这两个方法的作用分别是获取元素的滚动条距顶端的距离和距左端的距离。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/05/JavaScript编写可维护的代码/" rel="next" title="JavaScript编写可维护的代码">
+                <i class="fa fa-chevron-left"></i> JavaScript编写可维护的代码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/14/锋利的jQuery-事件和动画/" rel="prev" title="锋利的jQuery-事件和动画">
+                锋利的jQuery-事件和动画 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="蓝色味道丶" />
+            
+              <p class="site-author-name" itemprop="name">蓝色味道丶</p>
+              <p class="site-description motion-element" itemprop="description">云深无迹。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liuxilei" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liuxilei@qq.com" target="_blank" title="email">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>email</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery中的DOM操作"><span class="nav-number">1.</span> <span class="nav-text">jQuery中的DOM操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查找节点"><span class="nav-number">1.1.</span> <span class="nav-text">查找节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-查找元素节点"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.查找元素节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-查找属性节点"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.查找属性节点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建节点"><span class="nav-number">1.2.</span> <span class="nav-text">创建节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建元素节点"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建元素节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建文本节点"><span class="nav-number">1.2.2.</span> <span class="nav-text">创建文本节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建属性节点"><span class="nav-number">1.2.3.</span> <span class="nav-text">创建属性节点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入节点"><span class="nav-number">1.3.</span> <span class="nav-text">插入节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除节点"><span class="nav-number">1.4.</span> <span class="nav-text">删除节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制节点"><span class="nav-number">1.5.</span> <span class="nav-text">复制节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换节点"><span class="nav-number">1.6.</span> <span class="nav-text">替换节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#包裹节点"><span class="nav-number">1.6.1.</span> <span class="nav-text">包裹节点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性操作"><span class="nav-number">1.7.</span> <span class="nav-text">属性操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-获取属性和设置属性"><span class="nav-number">1.7.1.</span> <span class="nav-text">1.获取属性和设置属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-删除属性"><span class="nav-number">1.7.2.</span> <span class="nav-text">2.删除属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样式操作"><span class="nav-number">1.8.</span> <span class="nav-text">样式操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-获取样式和设置样式"><span class="nav-number">1.8.1.</span> <span class="nav-text">1.获取样式和设置样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-追加样式"><span class="nav-number">1.8.2.</span> <span class="nav-text">2.追加样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-移除样式"><span class="nav-number">1.8.3.</span> <span class="nav-text">3.移除样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-切换样式"><span class="nav-number">1.8.4.</span> <span class="nav-text">4.切换样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-判断是否含有某个样式"><span class="nav-number">1.8.5.</span> <span class="nav-text">5.判断是否含有某个样式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置和获取HTML、文本和值"><span class="nav-number">1.9.</span> <span class="nav-text">设置和获取HTML、文本和值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-html-方法"><span class="nav-number">1.9.1.</span> <span class="nav-text">*1.html()方法**</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-text-方法"><span class="nav-number">1.9.2.</span> <span class="nav-text">2.text()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-val-方法"><span class="nav-number">1.9.3.</span> <span class="nav-text">3.val()方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历节点"><span class="nav-number">1.10.</span> <span class="nav-text">遍历节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-children-方法"><span class="nav-number">1.10.1.</span> <span class="nav-text">1.children()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-next"><span class="nav-number">1.10.2.</span> <span class="nav-text">2.next()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-prev"><span class="nav-number">1.10.3.</span> <span class="nav-text">3.prev()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-siblings-方法"><span class="nav-number">1.10.4.</span> <span class="nav-text">4.siblings()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-closest"><span class="nav-number">1.10.5.</span> <span class="nav-text">5.closest()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-DOM操作"><span class="nav-number">1.11.</span> <span class="nav-text">CSS-DOM操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-offset方法"><span class="nav-number">1.11.1.</span> <span class="nav-text">1.offset方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-position方法"><span class="nav-number">1.11.2.</span> <span class="nav-text">2.position方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-scrollTop-方法和scrollLeft-方法"><span class="nav-number">1.11.3.</span> <span class="nav-text">3.scrollTop()方法和scrollLeft()方法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝色味道丶</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

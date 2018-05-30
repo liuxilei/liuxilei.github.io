@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="liuxilei 蓝色味道丶" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于响应式网站做的笔记">
+<meta property="og:url" content="https://liuxilei.github.io/2017/10/13/关于响应式网站做的笔记/index.html">
+<meta property="og:site_name" content="蓝色味道丶">
+<meta property="og:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-30T06:54:44.319Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于响应式网站做的笔记">
+<meta name="twitter:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liuxilei.github.io/2017/10/13/关于响应式网站做的笔记/"/>
+
+
+
+
+
+  <title>关于响应式网站做的笔记 | 蓝色味道丶</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝色味道丶</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuxilei.github.io/2017/10/13/关于响应式网站做的笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝色味道丶">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝色味道丶">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关于响应式网站做的笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-13T20:30:50+08:00">
+                2017-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>我的世界会有一束光，而我永远都会在最初的地方等它。<br>亦如最初的自己</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="响应式网站是一个设计理念，它是多项技术的综合体"><a href="#响应式网站是一个设计理念，它是多项技术的综合体" class="headerlink" title="响应式网站是一个设计理念，它是多项技术的综合体"></a>响应式网站是一个设计理念，它是多项技术的综合体</h2><h4 id="流动网格（弹性网格布局）、弹性图片和媒介查询是响应式互联网设计的三大技术成分"><a href="#流动网格（弹性网格布局）、弹性图片和媒介查询是响应式互联网设计的三大技术成分" class="headerlink" title="流动网格（弹性网格布局）、弹性图片和媒介查询是响应式互联网设计的三大技术成分"></a><strong>流动网格</strong>（<strong>弹性网格布局</strong>）、<strong>弹性图片</strong>和<strong>媒介查询</strong>是响应式互联网设计的三大技术成分</h4><h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a><strong>优点：</strong></h4><ul>
+<li>解决了设备只见的差异化展示（让不同的设备达到最优的视觉体验）</li>
+<li>减少工作量<pre><code>1、网站、设计、代码、内容都只需要一份
+2、多出来的工作量只是JS脚本、CSS样式做一些改动
+</code></pre></li>
+<li>节省时间</li>
+<li>每个设备都能得到正确的设计</li>
+<li>搜索优化<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a><strong>缺点：</strong></h4><ul>
+<li>会加载更多的样式和脚本资源</li>
+<li>设计比较难精确定位和控制</li>
+<li>老版本浏览器兼容不好<h4 id="设计实践原则"><a href="#设计实践原则" class="headerlink" title="设计实践原则"></a><strong>设计实践原则</strong></h4><ul>
+<li>progressive enhancement 渐进增强 （不适用）</li>
+<li>graceful degradation    优雅降级（更好）<br>移动优先：<br> 在设计的初期就要考虑的页面如何在多终端展示<h4 id="断点的选择："><a href="#断点的选择：" class="headerlink" title="断点的选择："></a><strong>断点的选择：</strong></h4>0-480（小屏幕）、  481-800（中屏幕）、  801-1400（大屏幕）、 1400+（巨屏幕）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="移动web"><a href="#移动web" class="headerlink" title="移动web"></a><strong>移动web</strong></h4><h4 id="Pixel-移动开发像素知识"><a href="#Pixel-移动开发像素知识" class="headerlink" title="Pixel 移动开发像素知识"></a>Pixel 移动开发像素知识</h4><pre><code>px：css pixels 逻辑像素，浏览器使用的抽象单位
+dp,pt:device independent pixels 设备无关像素
+dpr:devicePixelRatio 设备像素缩放比
+计算公式:
+     平面上：1px = (dpr)^2 * dp
+     纬度上：1px = dpr * dp
+DPI:打印机每英寸可以喷的墨汁点（印刷行业）
+PPI：屏幕每英寸的像素数量，即单位英寸内的像素密度
+PPI越高，像素数越高，图像越清晰，但可视度越低（小），系统默认设置缩放比越大
+</code></pre><h4 id="Retina（高清屏）-dpr都是大于等于2"><a href="#Retina（高清屏）-dpr都是大于等于2" class="headerlink" title="Retina（高清屏）: dpr都是大于等于2"></a>Retina（高清屏）: dpr都是大于等于2</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/13/Sass学习笔记/" rel="next" title="Sass学习笔记">
+                <i class="fa fa-chevron-left"></i> Sass学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/14/html-css学习笔记/" rel="prev" title="html+css学习笔记">
+                html+css学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="蓝色味道丶" />
+            
+              <p class="site-author-name" itemprop="name">蓝色味道丶</p>
+              <p class="site-description motion-element" itemprop="description">云深无迹。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liuxilei" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liuxilei@qq.com" target="_blank" title="email">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>email</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式网站是一个设计理念，它是多项技术的综合体"><span class="nav-number">1.</span> <span class="nav-text">响应式网站是一个设计理念，它是多项技术的综合体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#流动网格（弹性网格布局）、弹性图片和媒介查询是响应式互联网设计的三大技术成分"><span class="nav-number">1.0.1.</span> <span class="nav-text">流动网格（弹性网格布局）、弹性图片和媒介查询是响应式互联网设计的三大技术成分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优点："><span class="nav-number">1.0.2.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点："><span class="nav-number">1.0.3.</span> <span class="nav-text">缺点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设计实践原则"><span class="nav-number">1.0.4.</span> <span class="nav-text">设计实践原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#断点的选择："><span class="nav-number">1.0.5.</span> <span class="nav-text">断点的选择：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动web"><span class="nav-number">1.0.6.</span> <span class="nav-text">移动web</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pixel-移动开发像素知识"><span class="nav-number">1.0.7.</span> <span class="nav-text">Pixel 移动开发像素知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Retina（高清屏）-dpr都是大于等于2"><span class="nav-number">1.0.8.</span> <span class="nav-text">Retina（高清屏）: dpr都是大于等于2</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝色味道丶</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

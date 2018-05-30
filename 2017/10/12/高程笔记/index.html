@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="liuxilei 蓝色味道丶" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高程笔记">
+<meta property="og:url" content="https://liuxilei.github.io/2017/10/12/高程笔记/index.html">
+<meta property="og:site_name" content="蓝色味道丶">
+<meta property="og:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-30T06:50:34.417Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高程笔记">
+<meta name="twitter:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liuxilei.github.io/2017/10/12/高程笔记/"/>
+
+
+
+
+
+  <title>高程笔记 | 蓝色味道丶</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝色味道丶</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuxilei.github.io/2017/10/12/高程笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝色味道丶">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝色味道丶">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">高程笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-12T21:32:25+08:00">
+                2017-10-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>我的世界会有一束光，而我永远都会在最初的地方等它。<br>亦如最初的自己</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="ECMAScript篇："><a href="#ECMAScript篇：" class="headerlink" title="ECMAScript篇："></a><strong>ECMAScript篇：</strong></h2><h4 id="defer属性和async属性只适用于外部脚本文件"><a href="#defer属性和async属性只适用于外部脚本文件" class="headerlink" title="defer属性和async属性只适用于外部脚本文件"></a>defer属性和async属性只适用于<strong>外部脚本</strong>文件</h4><h4 id="ECMAScript中的一切（变量、函数名、和操作符）都区分大小写。"><a href="#ECMAScript中的一切（变量、函数名、和操作符）都区分大小写。" class="headerlink" title="ECMAScript中的一切（变量、函数名、和操作符）都区分大小写。"></a>ECMAScript中的一切（变量、函数名、和操作符）都区分大小写。</h4><h4 id="标识符：就是指变量、函数、属性的名字或者函数的参数。按照惯例ECMAScript标识符采用驼峰大小写格式，也就是第一个字母小写，剩余的每个单词的首字母大写。"><a href="#标识符：就是指变量、函数、属性的名字或者函数的参数。按照惯例ECMAScript标识符采用驼峰大小写格式，也就是第一个字母小写，剩余的每个单词的首字母大写。" class="headerlink" title="标识符：就是指变量、函数、属性的名字或者函数的参数。按照惯例ECMAScript标识符采用驼峰大小写格式，也就是第一个字母小写，剩余的每个单词的首字母大写。"></a>标识符：就是指变量、函数、属性的名字或者函数的参数。按照惯例ECMAScript标识符采用驼峰大小写格式，也就是第一个字母小写，剩余的每个单词的首字母大写。</h4><h4 id="要在整个脚本中启用严格模式，可以在顶部添加如下代码："><a href="#要在整个脚本中启用严格模式，可以在顶部添加如下代码：" class="headerlink" title="要在整个脚本中启用严格模式，可以在顶部添加如下代码："></a>要在整个脚本中启用严格模式，可以在顶部添加如下代码：</h4><pre><code>&quot;use strict&quot;(这行代码看起来像是字符串，而且也没有赋值给任何变量，但其实它是一个编译指示，用于告诉支持的JavaScript引擎切换到严格模式)
+</code></pre><h4 id="ECMAScript中的5种简单数据类型：Undefined、Null、Boolean、Number和String"><a href="#ECMAScript中的5种简单数据类型：Undefined、Null、Boolean、Number和String" class="headerlink" title="ECMAScript中的5种简单数据类型：Undefined、Null、Boolean、Number和String."></a>ECMAScript中的5种简单数据类型：Undefined、Null、Boolean、Number和String.</h4><h4 id="复杂数据类型：Object（本质名值对）"><a href="#复杂数据类型：Object（本质名值对）" class="headerlink" title="复杂数据类型：Object（本质名值对）"></a>复杂数据类型：Object（本质<strong>名值对</strong>）</h4><h4 id="null表示一个空对象指针（如果定义的变量准备在将来用于保存对象，那么最好将该变量初始化为null而不是其他值）"><a href="#null表示一个空对象指针（如果定义的变量准备在将来用于保存对象，那么最好将该变量初始化为null而不是其他值）" class="headerlink" title="null表示一个空对象指针（如果定义的变量准备在将来用于保存对象，那么最好将该变量初始化为null而不是其他值）"></a><strong>null</strong>表示一个空对象指针（<strong>如果定义的变量准备在将来用于保存对象，那么最好将该变量初始化为null而不是其他值</strong>）</h4><h4 id="浮点数值的最高精度是17位小数，但在进行算术计算时其精度远远不如整数"><a href="#浮点数值的最高精度是17位小数，但在进行算术计算时其精度远远不如整数" class="headerlink" title="浮点数值的最高精度是17位小数，但在进行算术计算时其精度远远不如整数"></a>浮点数值的最高精度是17位小数，但在进行算术计算时其精度远远不如整数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 0.1;</span><br><span class="line">var b = 0.2;</span><br><span class="line">if (a + b == 0.3) &#123;    //不要做这样的测试!</span><br><span class="line">    alert(&quot;You got 0.3.&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但以下代码ok</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 0.05;</span><br><span class="line">var b = 0.25;</span><br><span class="line">if (a + b == 0.3) &#123;    </span><br><span class="line">    alert(&quot;You got 0.3.&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="NaN与任何值都不相等，包括NaN本身。"><a href="#NaN与任何值都不相等，包括NaN本身。" class="headerlink" title="NaN与任何值都不相等，包括NaN本身。"></a><strong>NaN</strong>与任何值都不相等，包括NaN本身。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(NaN == NaN);   //false</span><br></pre></td></tr></table></figure>
+<p>用parseInt()转换空字符串会返回NaN</p>
+<h4 id="字符串要理解的点："><a href="#字符串要理解的点：" class="headerlink" title="字符串要理解的点："></a><strong>字符串要理解的点：</strong></h4><pre><code>ECMAScript中的字符串是不可变的，也就是说，字符串一旦创建，它们的值就不能改变。要改变某个变量保存的字符串，**首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量**。
+</code></pre><h4 id="一元操作符中要注意的（前置和后置）"><a href="#一元操作符中要注意的（前置和后置）" class="headerlink" title="一元操作符中要注意的（前置和后置）"></a>一元操作符中要注意的（前置和后置）</h4><p><strong>执行前置递增和递减操作时，变量的值都是在语句被求值以前改变的。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var age = 29;</span><br><span class="line">var anotherAge = --age + 2;</span><br><span class="line">alert(age);   // 输出28</span><br><span class="line">alert(anotherAge);  //输出30</span><br></pre></td></tr></table></figure>
+<p>后置递增和递减与前置递增和递减有一个非常重要的区别，即递增和递减操作是在包含它们的语句被求值之后才执行的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1 = 2;</span><br><span class="line">var num2 = 20;</span><br><span class="line">var num3 = num1-- + num2;  //等于22</span><br><span class="line">var num4 = num1 + num2;    //等于21</span><br></pre></td></tr></table></figure>
+<h4 id="在随后的学习中，学习js数据结构列表时，看到一个后置的一元操作符，瞬间觉得这种前置和后置设计的伟大之处。"><a href="#在随后的学习中，学习js数据结构列表时，看到一个后置的一元操作符，瞬间觉得这种前置和后置设计的伟大之处。" class="headerlink" title="在随后的学习中，学习js数据结构列表时，看到一个后置的一元操作符，瞬间觉得这种前置和后置设计的伟大之处。"></a>在随后的学习中，学习js数据结构<strong>列表</strong>时，看到一个后置的一元操作符，瞬间觉得这种前置和后置设计的伟大之处。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* 给列表添加元素 */</span><br><span class="line">function append(element)&#123;</span><br><span class="line">    this.dataStore[this.listSize++]=element;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我对这个函数的理解：给当前数组位置存一个新值，然后数组的长度加一，既赋值了当前项，又为下一项的保存预先留个空位。（仅个人理解，如有问题，感谢指出）</p>
+<h4 id="同时使用两个逻辑非操作符，实际上就会模拟Boolean-转型函数的行为。"><a href="#同时使用两个逻辑非操作符，实际上就会模拟Boolean-转型函数的行为。" class="headerlink" title="同时使用两个逻辑非操作符，实际上就会模拟Boolean()转型函数的行为。"></a><strong>同时使用两个逻辑非操作符，实际上就会模拟Boolean()转型函数的行为。</strong></h4><p>逻辑或操作符是短路操作符，如果第一个操作数的求值结果为true，就不会对第二个操作数求值。<br>这种可以用于给某变量赋值：（妙用如下）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var myObject = preferredObject || backupObject;</span><br></pre></td></tr></table></figure>
+<p>我的理解：为了让某个变量赋值的保险起见，一般逻辑或前面的基本都会存在，如果不存在，为其赋值后面一个，加个保险。（仅个人理解，如有问题，感谢指出）</p>
+<h4 id="相等操作符："><a href="#相等操作符：" class="headerlink" title="相等操作符："></a><strong>相等操作符：</strong></h4><p>注意“==”和“===”<br>记住：null == undefined会返回true,因为它们是类似的值；但null === undefined会返回false，因为它们是不同类型的值。</p>
+<h4 id="break和continue语句"><a href="#break和continue语句" class="headerlink" title="break和continue语句"></a><strong>break和continue语句</strong></h4><p>   break语句会立即退出循环，强制继续执行循环后面的语句。而continue语句虽然也是立即退出循环，但退出循环后会从循环的顶部继续执行。</p>
+<h4 id="switch语句在比较值时使用的是全等操作符，因此不会发生类型转换。"><a href="#switch语句在比较值时使用的是全等操作符，因此不会发生类型转换。" class="headerlink" title="switch语句在比较值时使用的是全等操作符，因此不会发生类型转换。"></a><strong>switch语句</strong>在比较值时使用的是<strong>全等操作符</strong>，因此不会发生类型转换。</h4><h4 id="ECMAScript中所有函数的参数都是按值传递的。"><a href="#ECMAScript中所有函数的参数都是按值传递的。" class="headerlink" title="ECMAScript中所有函数的参数都是按值传递的。"></a>ECMAScript中所有函数的参数都是按值传递的。</h4><h4 id="使用var声明的变量会自动被添加到最接近的环境中。"><a href="#使用var声明的变量会自动被添加到最接近的环境中。" class="headerlink" title="使用var声明的变量会自动被添加到最接近的环境中。"></a>使用var声明的变量会自动被添加到最接近的环境中。</h4><h4 id="优化内存占用的最佳方式，就是为执行中的代码只保存必要的数据。一旦数据不再有用，最好通过将其值设置为null来释放其引用—这个做法叫做解除引用。（解除引用的真正作用是让值脱离执行环境，以便垃圾收集器下次运行时将其回收）"><a href="#优化内存占用的最佳方式，就是为执行中的代码只保存必要的数据。一旦数据不再有用，最好通过将其值设置为null来释放其引用—这个做法叫做解除引用。（解除引用的真正作用是让值脱离执行环境，以便垃圾收集器下次运行时将其回收）" class="headerlink" title="优化内存占用的最佳方式，就是为执行中的代码只保存必要的数据。一旦数据不再有用，最好通过将其值设置为null来释放其引用—这个做法叫做解除引用。（解除引用的真正作用是让值脱离执行环境，以便垃圾收集器下次运行时将其回收）"></a><strong>优化内存占用的最佳方式，就是为执行中的代码只保存必要的数据。一旦数据不再有用，最好通过将其值设置为null来释放其引用</strong>—这个做法叫做解除引用。（解除引用的真正作用是让值脱离执行环境，以便垃圾收集器下次运行时将其回收）</h4><pre><code>基本类型值在内存中占据固定大小的空间，因此被保存在栈内存中;
+引用类型的值是对象，保存在堆内存中;
+确定一个值是哪种基本类型可以使用typeof操作符，而确定一个值是哪种引用类型可以使用instanceof操作符
+</code></pre><h4 id="instanceof操作符的问题在于，它假定只有一个全局执行环境。"><a href="#instanceof操作符的问题在于，它假定只有一个全局执行环境。" class="headerlink" title="instanceof操作符的问题在于，它假定只有一个全局执行环境。"></a>instanceof操作符的问题在于，它假定只有一个全局执行环境。</h4><pre><code>如果网页中包含多个框架，那实际上就存在两个以上不同的执行环境，从而存在两个以上不同版本的Array构造函数。如果你从一个框架向另一个框架传入一个数组，那么传入的数组与在第二个框架中原生创建的数组分别具有各自不同的构造函数。
+为了解决这个问题，ECMAScript5新增了Array.isArray()方法。这个方法的目的是最终确定某个值到底是不是数组，而不管它是哪个全局执行环境中创建的。这个方法的用法如下：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (Array.isArray()) &#123;</span><br><span class="line">    //对数组执行某些操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="函数名仅仅是指向函数的指针。"><a href="#函数名仅仅是指向函数的指针。" class="headerlink" title="函数名仅仅是指向函数的指针。"></a>函数名仅仅是指向函数的指针。</h4><h4 id="解析器会率先读取函数声明，并使其在执行任何代码之前可用（可以访问）；至于函数表达式，则必须等到解析器执行到它所在的代码行，才会真正被解释执行。"><a href="#解析器会率先读取函数声明，并使其在执行任何代码之前可用（可以访问）；至于函数表达式，则必须等到解析器执行到它所在的代码行，才会真正被解释执行。" class="headerlink" title="解析器会率先读取函数声明，并使其在执行任何代码之前可用（可以访问）；至于函数表达式，则必须等到解析器执行到它所在的代码行，才会真正被解释执行。"></a>解析器会率先读取函数声明，并使其在执行任何代码之前可用（可以访问）；至于函数表达式，则必须等到解析器执行到它所在的代码行，才会真正被解释执行。</h4><h2 id="BOM篇（HTML5规范）"><a href="#BOM篇（HTML5规范）" class="headerlink" title="BOM篇（HTML5规范）"></a><strong>BOM篇</strong>（HTML5规范）</h2><h4 id="top对象始终指向最高（最外）层的框架，也就是浏览器窗口。"><a href="#top对象始终指向最高（最外）层的框架，也就是浏览器窗口。" class="headerlink" title="top对象始终指向最高（最外）层的框架，也就是浏览器窗口。"></a>top对象始终指向最高（最外）层的框架，也就是浏览器窗口。</h4><h4 id="判断页面是否处于标准模式"><a href="#判断页面是否处于标准模式" class="headerlink" title="判断页面是否处于标准模式"></a><strong>判断页面是否处于标准模式</strong></h4><pre><code>document.compatMode == &quot;CSS1Compat&quot;
+</code></pre><h4 id="尝试访问未声明的变量会抛出错误，但是通过查询window对象，可以知道某个可能未声明的变量是否存在。"><a href="#尝试访问未声明的变量会抛出错误，但是通过查询window对象，可以知道某个可能未声明的变量是否存在。" class="headerlink" title="尝试访问未声明的变量会抛出错误，但是通过查询window对象，可以知道某个可能未声明的变量是否存在。"></a>尝试访问未声明的变量会抛出错误，但是通过查询window对象，可以知道某个可能未声明的变量是否存在。</h4><h4 id="JavaScript是一个单线程的解释器，因此一定时间内只能执行一段代码。为了控制要执行的代码，就有一个JavaScript任务队列。这些任务会按照将它们添加到队列的顺序执行。setTimeout-的第二个参数告诉JavaScript再过多长时间把当前任务添加到队列中。如果队列是空的，那么添加的代码会立即执行；如果队列不是空的，那么它就要等前面的代码执行完了以后再执行。"><a href="#JavaScript是一个单线程的解释器，因此一定时间内只能执行一段代码。为了控制要执行的代码，就有一个JavaScript任务队列。这些任务会按照将它们添加到队列的顺序执行。setTimeout-的第二个参数告诉JavaScript再过多长时间把当前任务添加到队列中。如果队列是空的，那么添加的代码会立即执行；如果队列不是空的，那么它就要等前面的代码执行完了以后再执行。" class="headerlink" title="JavaScript是一个单线程的解释器，因此一定时间内只能执行一段代码。为了控制要执行的代码，就有一个JavaScript任务队列。这些任务会按照将它们添加到队列的顺序执行。setTimeout()的第二个参数告诉JavaScript再过多长时间把当前任务添加到队列中。如果队列是空的，那么添加的代码会立即执行；如果队列不是空的，那么它就要等前面的代码执行完了以后再执行。"></a><strong>JavaScript是一个单线程的解释器，因此一定时间内只能执行一段代码。为了控制要执行的代码，就有一个JavaScript任务队列。这些任务会按照将它们添加到队列的顺序执行。setTimeout()的第二个参数告诉JavaScript再过多长时间把当前任务添加到队列中。如果队列是空的，那么添加的代码会立即执行；如果队列不是空的，那么它就要等前面的代码执行完了以后再执行。</strong></h4><pre><code>在开发环境下，很少使用真正的间歇调用，原因是后一个间歇调用可能会在前一个间歇调用结束之前启动。所以，最好不要使用间歇调用。
+</code></pre><h2 id="DOM篇"><a href="#DOM篇" class="headerlink" title="DOM篇"></a><strong>DOM篇</strong></h2><h4 id="NodeList是一种类数组对象，用于保存一组有序的节点，可以通过位置来访问这些节点。请注意，虽然可以通过方括号来访问NodeList的值，而且这个对象也有length属性，但它并不是Array的实例。NodeList对象的独特之处在于，它实际上是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够自动反映在NodeList对象中。我们常说，NodeList是有生命、有呼吸的对象，而不是在我们第一次访问它们的某个瞬间拍摄下来的一张快照。"><a href="#NodeList是一种类数组对象，用于保存一组有序的节点，可以通过位置来访问这些节点。请注意，虽然可以通过方括号来访问NodeList的值，而且这个对象也有length属性，但它并不是Array的实例。NodeList对象的独特之处在于，它实际上是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够自动反映在NodeList对象中。我们常说，NodeList是有生命、有呼吸的对象，而不是在我们第一次访问它们的某个瞬间拍摄下来的一张快照。" class="headerlink" title="NodeList是一种类数组对象，用于保存一组有序的节点，可以通过位置来访问这些节点。请注意，虽然可以通过方括号来访问NodeList的值，而且这个对象也有length属性，但它并不是Array的实例。NodeList对象的独特之处在于，它实际上是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够自动反映在NodeList对象中。我们常说，NodeList是有生命、有呼吸的对象，而不是在我们第一次访问它们的某个瞬间拍摄下来的一张快照。"></a>NodeList是一种类数组对象，用于保存一组有序的节点，可以通过位置来访问这些节点。<strong>请注意，虽然可以通过方括号来访问NodeList的值，而且这个对象也有length属性，但它并不是Array的实例。NodeList对象的独特之处在于，它实际上是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够自动反映在NodeList对象中。我们常说，NodeList是有生命、有呼吸的对象，而不是在我们第一次访问它们的某个瞬间拍摄下来的一张快照。</strong></h4><h4 id="由于IE没有公开Node类型的构造函数，为了确保跨浏览器兼容，最好还是将nodeType属性与数字值进行比较。"><a href="#由于IE没有公开Node类型的构造函数，为了确保跨浏览器兼容，最好还是将nodeType属性与数字值进行比较。" class="headerlink" title="由于IE没有公开Node类型的构造函数，为了确保跨浏览器兼容，最好还是将nodeType属性与数字值进行比较。"></a>由于IE没有公开Node类型的构造函数，为了确保跨浏览器兼容，最好还是将nodeType属性与数字值进行比较。</h4><h4 id="appendChild-、insertBefore-、replaceChild-、removeChild-这四个方法操作的都是某个节点的子节点，也就是说，要使用这几个方法必须先取得父节点（使用parentNode属性）。另外，并不是所有类型的节点都有子节点，如果在不支持子节点的节点上调用这些方法，将会导致错误。"><a href="#appendChild-、insertBefore-、replaceChild-、removeChild-这四个方法操作的都是某个节点的子节点，也就是说，要使用这几个方法必须先取得父节点（使用parentNode属性）。另外，并不是所有类型的节点都有子节点，如果在不支持子节点的节点上调用这些方法，将会导致错误。" class="headerlink" title="appendChild()、insertBefore()、replaceChild()、removeChild()这四个方法操作的都是某个节点的子节点，也就是说，要使用这几个方法必须先取得父节点（使用parentNode属性）。另外，并不是所有类型的节点都有子节点，如果在不支持子节点的节点上调用这些方法，将会导致错误。"></a><strong>appendChild()、insertBefore()、replaceChild()、removeChild()这四个方法操作的都是某个节点的子节点，也就是说，要使用这几个方法必须先取得父节点（使用parentNode属性）。</strong>另外，并不是所有类型的节点都有子节点，如果在不支持子节点的节点上调用这些方法，将会导致错误。</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/12/慕课网深入理解笔记/" rel="next" title="慕课网深入理解笔记">
+                <i class="fa fa-chevron-left"></i> 慕课网深入理解笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/13/Sass学习笔记/" rel="prev" title="Sass学习笔记">
+                Sass学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="蓝色味道丶" />
+            
+              <p class="site-author-name" itemprop="name">蓝色味道丶</p>
+              <p class="site-description motion-element" itemprop="description">云深无迹。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liuxilei" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liuxilei@qq.com" target="_blank" title="email">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>email</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript篇："><span class="nav-number">1.</span> <span class="nav-text">ECMAScript篇：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#defer属性和async属性只适用于外部脚本文件"><span class="nav-number">1.0.1.</span> <span class="nav-text">defer属性和async属性只适用于外部脚本文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ECMAScript中的一切（变量、函数名、和操作符）都区分大小写。"><span class="nav-number">1.0.2.</span> <span class="nav-text">ECMAScript中的一切（变量、函数名、和操作符）都区分大小写。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标识符：就是指变量、函数、属性的名字或者函数的参数。按照惯例ECMAScript标识符采用驼峰大小写格式，也就是第一个字母小写，剩余的每个单词的首字母大写。"><span class="nav-number">1.0.3.</span> <span class="nav-text">标识符：就是指变量、函数、属性的名字或者函数的参数。按照惯例ECMAScript标识符采用驼峰大小写格式，也就是第一个字母小写，剩余的每个单词的首字母大写。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#要在整个脚本中启用严格模式，可以在顶部添加如下代码："><span class="nav-number">1.0.4.</span> <span class="nav-text">要在整个脚本中启用严格模式，可以在顶部添加如下代码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ECMAScript中的5种简单数据类型：Undefined、Null、Boolean、Number和String"><span class="nav-number">1.0.5.</span> <span class="nav-text">ECMAScript中的5种简单数据类型：Undefined、Null、Boolean、Number和String.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂数据类型：Object（本质名值对）"><span class="nav-number">1.0.6.</span> <span class="nav-text">复杂数据类型：Object（本质名值对）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null表示一个空对象指针（如果定义的变量准备在将来用于保存对象，那么最好将该变量初始化为null而不是其他值）"><span class="nav-number">1.0.7.</span> <span class="nav-text">null表示一个空对象指针（如果定义的变量准备在将来用于保存对象，那么最好将该变量初始化为null而不是其他值）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点数值的最高精度是17位小数，但在进行算术计算时其精度远远不如整数"><span class="nav-number">1.0.8.</span> <span class="nav-text">浮点数值的最高精度是17位小数，但在进行算术计算时其精度远远不如整数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NaN与任何值都不相等，包括NaN本身。"><span class="nav-number">1.0.9.</span> <span class="nav-text">NaN与任何值都不相等，包括NaN本身。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串要理解的点："><span class="nav-number">1.0.10.</span> <span class="nav-text">字符串要理解的点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一元操作符中要注意的（前置和后置）"><span class="nav-number">1.0.11.</span> <span class="nav-text">一元操作符中要注意的（前置和后置）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在随后的学习中，学习js数据结构列表时，看到一个后置的一元操作符，瞬间觉得这种前置和后置设计的伟大之处。"><span class="nav-number">1.0.12.</span> <span class="nav-text">在随后的学习中，学习js数据结构列表时，看到一个后置的一元操作符，瞬间觉得这种前置和后置设计的伟大之处。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同时使用两个逻辑非操作符，实际上就会模拟Boolean-转型函数的行为。"><span class="nav-number">1.0.13.</span> <span class="nav-text">同时使用两个逻辑非操作符，实际上就会模拟Boolean()转型函数的行为。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相等操作符："><span class="nav-number">1.0.14.</span> <span class="nav-text">相等操作符：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#break和continue语句"><span class="nav-number">1.0.15.</span> <span class="nav-text">break和continue语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#switch语句在比较值时使用的是全等操作符，因此不会发生类型转换。"><span class="nav-number">1.0.16.</span> <span class="nav-text">switch语句在比较值时使用的是全等操作符，因此不会发生类型转换。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ECMAScript中所有函数的参数都是按值传递的。"><span class="nav-number">1.0.17.</span> <span class="nav-text">ECMAScript中所有函数的参数都是按值传递的。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用var声明的变量会自动被添加到最接近的环境中。"><span class="nav-number">1.0.18.</span> <span class="nav-text">使用var声明的变量会自动被添加到最接近的环境中。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优化内存占用的最佳方式，就是为执行中的代码只保存必要的数据。一旦数据不再有用，最好通过将其值设置为null来释放其引用—这个做法叫做解除引用。（解除引用的真正作用是让值脱离执行环境，以便垃圾收集器下次运行时将其回收）"><span class="nav-number">1.0.19.</span> <span class="nav-text">优化内存占用的最佳方式，就是为执行中的代码只保存必要的数据。一旦数据不再有用，最好通过将其值设置为null来释放其引用—这个做法叫做解除引用。（解除引用的真正作用是让值脱离执行环境，以便垃圾收集器下次运行时将其回收）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#instanceof操作符的问题在于，它假定只有一个全局执行环境。"><span class="nav-number">1.0.20.</span> <span class="nav-text">instanceof操作符的问题在于，它假定只有一个全局执行环境。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数名仅仅是指向函数的指针。"><span class="nav-number">1.0.21.</span> <span class="nav-text">函数名仅仅是指向函数的指针。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解析器会率先读取函数声明，并使其在执行任何代码之前可用（可以访问）；至于函数表达式，则必须等到解析器执行到它所在的代码行，才会真正被解释执行。"><span class="nav-number">1.0.22.</span> <span class="nav-text">解析器会率先读取函数声明，并使其在执行任何代码之前可用（可以访问）；至于函数表达式，则必须等到解析器执行到它所在的代码行，才会真正被解释执行。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BOM篇（HTML5规范）"><span class="nav-number">2.</span> <span class="nav-text">BOM篇（HTML5规范）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#top对象始终指向最高（最外）层的框架，也就是浏览器窗口。"><span class="nav-number">2.0.1.</span> <span class="nav-text">top对象始终指向最高（最外）层的框架，也就是浏览器窗口。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断页面是否处于标准模式"><span class="nav-number">2.0.2.</span> <span class="nav-text">判断页面是否处于标准模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尝试访问未声明的变量会抛出错误，但是通过查询window对象，可以知道某个可能未声明的变量是否存在。"><span class="nav-number">2.0.3.</span> <span class="nav-text">尝试访问未声明的变量会抛出错误，但是通过查询window对象，可以知道某个可能未声明的变量是否存在。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript是一个单线程的解释器，因此一定时间内只能执行一段代码。为了控制要执行的代码，就有一个JavaScript任务队列。这些任务会按照将它们添加到队列的顺序执行。setTimeout-的第二个参数告诉JavaScript再过多长时间把当前任务添加到队列中。如果队列是空的，那么添加的代码会立即执行；如果队列不是空的，那么它就要等前面的代码执行完了以后再执行。"><span class="nav-number">2.0.4.</span> <span class="nav-text">JavaScript是一个单线程的解释器，因此一定时间内只能执行一段代码。为了控制要执行的代码，就有一个JavaScript任务队列。这些任务会按照将它们添加到队列的顺序执行。setTimeout()的第二个参数告诉JavaScript再过多长时间把当前任务添加到队列中。如果队列是空的，那么添加的代码会立即执行；如果队列不是空的，那么它就要等前面的代码执行完了以后再执行。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM篇"><span class="nav-number">3.</span> <span class="nav-text">DOM篇</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NodeList是一种类数组对象，用于保存一组有序的节点，可以通过位置来访问这些节点。请注意，虽然可以通过方括号来访问NodeList的值，而且这个对象也有length属性，但它并不是Array的实例。NodeList对象的独特之处在于，它实际上是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够自动反映在NodeList对象中。我们常说，NodeList是有生命、有呼吸的对象，而不是在我们第一次访问它们的某个瞬间拍摄下来的一张快照。"><span class="nav-number">3.0.1.</span> <span class="nav-text">NodeList是一种类数组对象，用于保存一组有序的节点，可以通过位置来访问这些节点。请注意，虽然可以通过方括号来访问NodeList的值，而且这个对象也有length属性，但它并不是Array的实例。NodeList对象的独特之处在于，它实际上是基于DOM结构动态执行查询的结果，因此DOM结构的变化能够自动反映在NodeList对象中。我们常说，NodeList是有生命、有呼吸的对象，而不是在我们第一次访问它们的某个瞬间拍摄下来的一张快照。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#由于IE没有公开Node类型的构造函数，为了确保跨浏览器兼容，最好还是将nodeType属性与数字值进行比较。"><span class="nav-number">3.0.2.</span> <span class="nav-text">由于IE没有公开Node类型的构造函数，为了确保跨浏览器兼容，最好还是将nodeType属性与数字值进行比较。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#appendChild-、insertBefore-、replaceChild-、removeChild-这四个方法操作的都是某个节点的子节点，也就是说，要使用这几个方法必须先取得父节点（使用parentNode属性）。另外，并不是所有类型的节点都有子节点，如果在不支持子节点的节点上调用这些方法，将会导致错误。"><span class="nav-number">3.0.3.</span> <span class="nav-text">appendChild()、insertBefore()、replaceChild()、removeChild()这四个方法操作的都是某个节点的子节点，也就是说，要使用这几个方法必须先取得父节点（使用parentNode属性）。另外，并不是所有类型的节点都有子节点，如果在不支持子节点的节点上调用这些方法，将会导致错误。</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝色味道丶</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

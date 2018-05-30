@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="liuxilei 蓝色味道丶" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta property="og:type" content="article">
+<meta property="og:title" content="锋利的jQuery-事件和动画">
+<meta property="og:url" content="https://liuxilei.github.io/2017/12/14/锋利的jQuery-事件和动画/index.html">
+<meta property="og:site_name" content="蓝色味道丶">
+<meta property="og:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.blog.csdn.net/20171217125757677?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-05-30T07:25:31.462Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="锋利的jQuery-事件和动画">
+<meta name="twitter:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20171217125757677?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liuxilei.github.io/2017/12/14/锋利的jQuery-事件和动画/"/>
+
+
+
+
+
+  <title>锋利的jQuery-事件和动画 | 蓝色味道丶</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝色味道丶</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuxilei.github.io/2017/12/14/锋利的jQuery-事件和动画/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝色味道丶">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝色味道丶">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">锋利的jQuery-事件和动画</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-14T17:43:18+08:00">
+                2017-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>我的世界会有一束光，而我永远都会在最初的地方等它。<br>亦如最初的自己</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="jQuery中的事件和动画"><a href="#jQuery中的事件和动画" class="headerlink" title="jQuery中的事件和动画"></a><strong>jQuery中的事件和动画</strong></h2><h3 id="jQuery中的事件"><a href="#jQuery中的事件" class="headerlink" title="jQuery中的事件"></a><strong>jQuery中的事件</strong></h3><h4 id="加载DOM"><a href="#加载DOM" class="headerlink" title="加载DOM"></a>加载DOM</h4><pre><code>以浏览器装载文档为例，在页面加载完毕后，浏览器会通过JavaScript为DOM元素添加事件，在常规的 JavaScript代码中，通常使用window.onload方法，而在jQuery中，使用的是$(document).ready()方法。$(document).ready()方法是事件模块中最重要的一个函数，可以极大的提高Web应用程序的响应速度，jQuery就是用$(document).ready()方法来代替传统JavaScript的window.onload方法的。通过使用该方法，可以在DOM载入就绪时就对其进行操纵并调用执行它所绑定的函数。在使用过程中，需要注意$(document).ready()方法和window.onload()方法之间的细微区别。
+</code></pre><h5 id="1-执行时机"><a href="#1-执行时机" class="headerlink" title="1.执行时机"></a>1.执行时机</h5><pre><code>$(document).ready()方法和window.onload方法有相似的功能，但是在执行时机方面是有区别的。window.onload方法是在网页所有的元素(包括元素的所有关联文件)完全加载到浏览器后才执行，即JavaScript此时才可以访问网页中的任何元素。而通过jQuery中的$(document).ready()方法注册的事件处理程序，在DOM完全就绪时就可以被调用。此时，网页的所有元素对jQuery而言都是可以访问的，但是，这并不意味着这些元素关联的文件都已经下载完毕。
+举一个例子，有一个大型的图库网站，为网页中所有图片添加某些行为，例如单击图片后让它隐藏或显示。如果使用window.onload方法来处理，那么用户必须等到每一幅图片都加载完毕后，才可以进行操作。如果使用jQuery中的$(document).ready()方法来进行设置，只要DOM就绪就可以操作了，不需要等待所有图片下载完毕。很显然，把网页解析为DOM树的速度比把网页中所有的关联文件加载完毕的速度块很多。
+另外，需要注意一点，由于在$(document).ready()方法内注册的事件，只要DOM就绪就会被执行，因此可能此时元素的关联文件未下载完。例如与图片的高度和宽度这样的属性此时不一定有效。要解决这个问题，可以使用jQuery中另一个关于页面加载的方法--load()方法。load()方法会在元素的onload事件中绑定一个处理事件。如果处理函数绑定给window对象，则会在所有内容(包括窗口、框架、对象和图像等)加载完毕后触发，如果处理函数绑定在元素上，则会在元素的内容加载完毕后触发。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(window).load(function() &#123;</span><br><span class="line">    //编写代码</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>等价于JavaScript中的一下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function() &#123;</span><br><span class="line">    //编写代码</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>2.多次使用<br>第一章曾经用一个表格总结过window.onload方法和$(document).ready()方法的区别，现在进行详细讲解。<br>假设网页中有两个函数，JavaScript代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function one() &#123;</span><br><span class="line">    alert(&quot;one&quot;);</span><br><span class="line">&#125;</span><br><span class="line">function two() &#123;</span><br><span class="line">    alert(&quot;two&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当网页加载完毕后，通过如下JavaScript代码来分别调用one函数和two函数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.onload = one;</span><br><span class="line">window.onload = two;</span><br></pre></td></tr></table></figure>
+<p>然而当运行代码后，发现只弹出字符串“two”对话框<br>字符串”one”对话框不能被弹出的原因是JavaScript的onload事件一次只能保存对一个函数的引用，它会自动用后面的函数覆盖前面的函数，因此不能在现有的行为上添加新的行为。<br>为了达到两个函数顺序触发的效果，只能再创建一个新的JavaScript方法来实现，JavaScript代码如下:<br>4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function() &#123;</span><br><span class="line">    one();</span><br><span class="line">    two();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>虽然这样编写代码能解决某些问题，但还是不能满足某些需求，例如有多个JavaScript文件，每个文件都需要用到window.onload方法，这种情况下用上面提到的方法编写代码会非常麻烦。而jQuery的$(document).readt()方法都会在现有行为上追加新的行为，这些行为会根据注册的顺序依次执行。例如如下jQuery代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function one() &#123;</span><br><span class="line">    alert(&quot;one&quot;);</span><br><span class="line">&#125;</span><br><span class="line">function two() &#123;</span><br><span class="line">    alert(&quot;two&quot;);</span><br><span class="line">&#125;</span><br><span class="line">$(document).ready(function() &#123;</span><br><span class="line">    one();</span><br><span class="line">&#125;);</span><br><span class="line">$(document).ready(function() &#123;</span><br><span class="line">    two();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="3-简写方式"><a href="#3-简写方式" class="headerlink" title="3.简写方式"></a>3.简写方式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(function() &#123;</span><br><span class="line">    //编写代码</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code>另外，$(document)也可以简写为$().当$()不带参数时，默认参数就是&quot;document&quot;,因此可以简写:
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$().ready(function() &#123;</span><br><span class="line">    //编写代码</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h4><p>在文档装载完成后，如果打算为元素绑定事件来完成某些操作，则可以使用bind()方法来对匹配元素进行特定事件的绑定，bind()方法的调用格式为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind(type[,data],fn);</span><br></pre></td></tr></table></figure>
+<p>bind()方法有3个参数，说明如下:<br>第1个参数是事件类型，类型包括：blur、focus、load、resize、scroll、unload、click、dblclick、mousedown、mouseup、mousemove、mouseover、mouseout、mouseenter、mouseleave、change、select、submit、keydown、keypress、keyup和error等，当然也可以是自定义名称。<br>第2个参数为可选参数，作为event.data属性值传递给事件对象的额外数据对象。<br>第三个参数则是用来绑定处理函数。</p>
+<h5 id="1-基本效果"><a href="#1-基本效果" class="headerlink" title="1.基本效果"></a>1.基本效果</h5><p>下面通过一个示例来了解bind()方法的用处。<br>假设网页中有一个FAQ，单击“标题”链接将显示内容。<br>HTML代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;panel&quot;&gt;</span><br><span class="line">    &lt;h5 class=&quot;head&quot;&gt;什么是jQuery？&lt;/h5&gt;</span><br><span class="line">    &lt;div class=&quot;content&quot;&gt;</span><br><span class="line"> xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>按照需求，需要完成以下几个步骤。<br>1.等待DOM装载完毕。<br>2.找到“标题”所在的元素，绑定click事件。<br>3.找到“内容”元素，可以轻易地写出如下jQuery代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(function() &#123;</span><br><span class="line">    $(&quot;#panel h5.head&quot;).bind(&quot;click&quot;,function() &#123;</span><br><span class="line">        $(this).next(&quot;div.content&quot;).show();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>与ready()方法一样，bind()方法可以多次调用。<br>上面jQuery代码中有一个关键字this，与在JavaScript中的作用一样，this引用的是携带相应行为的DOM元素。为了使该DOM元素能够使用jQuery中的方法，可以使用$(this)将其转换为jQuery对象。</p>
+<h4 id="合成事件"><a href="#合成事件" class="headerlink" title="合成事件"></a>合成事件</h4><p>hover()方法<br>hover()方法的语法结构为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hover(enter,leave);</span><br></pre></td></tr></table></figure>
+<p>hover()方法用于模拟光标悬停事件，当光标移动倒元素上时，会触发指定的第1个函数(enter),当光标移出这个元素时，会触发指定的第2个函数（leave）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(function() &#123;</span><br><span class="line">    $(&quot;#panel h5.head&quot;).hover(function() &#123;</span><br><span class="line">        $(this).next(&quot;div.content&quot;).show();</span><br><span class="line">    &#125;,function() &#123;</span><br><span class="line">        $(this).next(&quot;div.content&quot;).hide();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><h5 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h5><p>由于IE-DOM和标准DOM实现事件对象的方法各不相同，导致在不同浏览器中获取事件对象变得比较困难。针对这个问题，jQuery进行了必要的扩展和封装，从而使得在任何浏览器中都能轻松地获取事件对象以及事件对象的一些属性。</p>
+<h5 id="停止事件冒泡"><a href="#停止事件冒泡" class="headerlink" title="停止事件冒泡"></a>停止事件冒泡</h5><p>停止事件冒泡可以阻止事件中其他对象的事件处理函数被执行。在jQuery中提供了stopPropagation()方法来停止事件冒泡。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#content&apos;).bind(&quot;click&quot;,function() &#123;</span><br><span class="line">    var txt = $(&quot;#msg&quot;).html() + &quot;&lt;p&gt;外层div元素被单击.&lt;/p&gt;&quot;;</span><br><span class="line">    $(&quot;#msg&quot;).html(txt);</span><br><span class="line">    event.stopPropagation();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="阻止默认事件"><a href="#阻止默认事件" class="headerlink" title="阻止默认事件"></a>阻止默认事件</h5><p>在jQuery中，提供了preventDefault()方法来阻止元素的默认行为。<br><strong>jQuery不支持事件捕获。</strong></p>
+<h4 id="事件对象的属性"><a href="#事件对象的属性" class="headerlink" title="事件对象的属性"></a>事件对象的属性</h4><h5 id="1-event-type-方法"><a href="#1-event-type-方法" class="headerlink" title="1.event.type()方法"></a>1.event.type()方法</h5><p>该方法的作用使可以获取到事件的类型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;a&quot;).click(function() &#123;</span><br><span class="line">    alert(&quot;event.type&quot;);</span><br><span class="line">    return false;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>以上代码运行后会返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;click&quot;</span><br></pre></td></tr></table></figure>
+<h5 id="2-event-preventDefault-方法"><a href="#2-event-preventDefault-方法" class="headerlink" title="2.event.preventDefault()方法"></a>2.event.preventDefault()方法</h5><p>该方法的作用是阻止默认的事件行为。</p>
+<h5 id="3-event-stopPropagation-方法"><a href="#3-event-stopPropagation-方法" class="headerlink" title="3.event.stopPropagation()方法"></a>3.event.stopPropagation()方法</h5><p>该方法的作用是阻止事件的冒泡。</p>
+<h5 id="4-event-target-方法"><a href="#4-event-target-方法" class="headerlink" title="4.event.target()方法"></a>4.event.target()方法</h5><p>该方法的作用是获取触发事件的元素。jQuery对其封装后，避免了W3C、IE和safari浏览器的不同标准差异。</p>
+<h5 id="5-event-relatedTarget-方法"><a href="#5-event-relatedTarget-方法" class="headerlink" title="5.event.relatedTarget()方法"></a>5.event.relatedTarget()方法</h5><p>在标准DOM中，mouseover和mouseout所发生的元素可以通过event.target()方法来访问，相关元素是通过event.relatedTarget()方法来访问的。event.relatedTarget()方法在mouseover中相当于IE浏览器的event.fromElement()方法，在mouseout中相当于IE浏览器的event.toElement方法，jQuery对其进行了封装，使之能兼容各种浏览器。</p>
+<h5 id="6-event-pageX-方法-event-pageY-方法"><a href="#6-event-pageX-方法-event-pageY-方法" class="headerlink" title="6.event.pageX()方法/event.pageY()方法"></a>6.event.pageX()方法/event.pageY()方法</h5><p>该方法的作用是获取到光标相对于页面的x坐标和y坐标。如果没有使用jQuery时，那么IE浏览器中是用event.x()/event.y()方法，而在Firefox浏览器中是用event.pageX()/event.pageY(）方法。如果页面上有滚动条，则还要加上滚动条的宽度或高度。在IE浏览器中还应该减去默认的2px的边框。</p>
+<h5 id="7-event-which-方法"><a href="#7-event-which-方法" class="headerlink" title="7.event.which()方法"></a>7.event.which()方法</h5><p>该方法的作用是在鼠标单击事件中获取鼠标的左、中、右键，在键盘事件中获取键盘的按键。</p>
+<h5 id="8-event-metaKey-方法"><a href="#8-event-metaKey-方法" class="headerlink" title="8.event.metaKey()方法"></a>8.event.metaKey()方法</h5><p>针对不同的浏览器对键盘中的ctrl按键解释不同，jQuery也进行了封装，并规定event.metaKey()方法为键盘事件中获取ctrl按键。</p>
+<h4 id="移除事件"><a href="#移除事件" class="headerlink" title="移除事件"></a>移除事件</h4><p>可以为同一个元素绑定多个事件，也可以为多个元素绑定同一个事件。假设网页上有一个button元素，使用以下代码为该元素绑定多个相同的事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    $(function() &#123;</span><br><span class="line">        $(&quot;#btn&quot;).bind(&quot;click&quot;,function() &#123;</span><br><span class="line">            $(&quot;#test&quot;).append(&quot;&lt;p&gt;我的绑定事件1&lt;/p&gt;&quot;);</span><br><span class="line">        &#125;).bind(&quot;click&quot;,function() &#123;</span><br><span class="line">            $(&quot;#test&quot;).append(&quot;&lt;p&gt;我的绑定事件2&lt;/p&gt;&quot;);</span><br><span class="line">        &#125;).bind(&quot;click&quot;,function() &#123;</span><br><span class="line">            $(&quot;#test&quot;).append(&quot;&lt;p&gt;我的绑定事件3&lt;/p&gt;&quot;);</span><br><span class="line">        &#125;);    </span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;button id=&quot;btn&quot;&gt;单击我&lt;/button&gt;</span><br><span class="line">&lt;div id=&quot;test&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>1.移除按钮元素上以前注册的事件<br>首先在网页上添加一个移除事件的按钮。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=&quot;delAll&quot;&gt;删除所有事件&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p>然后为按钮绑定一个事件，jQuery代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#delAll&quot;).click(function() &#123;</span><br><span class="line">    $(&quot;#btn&quot;).unbind(&quot;click&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>2.移除button元素的其中一个事件<br>首先需要为这些匿名处理函数指定一个变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(function() &#123;</span><br><span class="line">    $(&quot;#btn&quot;).bind(&quot;click&quot;,myFun1 = function() &#123;</span><br><span class="line">        $(&quot;#test&quot;).append(&quot;&lt;p&gt;我的绑定事件1&lt;/p&gt;&quot;);</span><br><span class="line">    &#125;).bind(&quot;click&quot;,myFun2 = function() &#123;</span><br><span class="line">        $(&quot;#test&quot;).append(&quot;&lt;p&gt;我的绑定事件2&lt;/p&gt;&quot;);</span><br><span class="line">    &#125;).bind(&quot;click&quot;,myFun3 = function() &#123;</span><br><span class="line">        $(&quot;#test&quot;).append(&quot;&lt;p&gt;我的绑定事件3&lt;/p&gt;&quot;);</span><br><span class="line">    &#125;);   </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>然后就可以单独删除某一个事件了，jQuery代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#deTwo&quot;).click(function() &#123;</span><br><span class="line">    $(&quot;#btn&quot;).unbind(&quot;click&quot;,myFun2);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>另外，对于只需要触发一次，随后就要立即解除绑定的情况，jQuery提供了一种间歇方法–one()方法。One()方法可以为元素绑定处理函数。当处理函数触发一次后，立即被删除。即在每个对象上，事件处理函数只会被执行一次。</p>
+<h4 id="模拟操作"><a href="#模拟操作" class="headerlink" title="模拟操作"></a>模拟操作</h4><p>1.常用模拟<br>以上的例子都是用户必须通过单击按钮，才能触发click事件，但是有时，需要通过模拟用户操作，来达到单击的效果，例如在用户进入页面后，就触发click事件，而不需要用户去主动单击。<br>在jQuery中，可以使用trigger()方法完成模拟操作。例如可以使用下面的代码来触发id为btn的按钮的click事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#btn&quot;).trigger(&quot;click&quot;);</span><br></pre></td></tr></table></figure>
+<p>也可以直接用简化写法click()，来达到同样的效果:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#btn&quot;).click();</span><br></pre></td></tr></table></figure>
+<h5 id="2-触发自定义事件"><a href="#2-触发自定义事件" class="headerlink" title="2.触发自定义事件"></a>2.触发自定义事件</h5><p>trigger()方法不仅能触发浏览器支持的具有相同名称的事件，也可以触发自定义名称的事件，例如为元素绑定一个”myClick”的事件，jQuery代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#btn&quot;).bind(&quot;myClick&quot;,function() &#123;</span><br><span class="line">    $(&quot;#test&quot;).append(&quot;&lt;p&gt;我都自定义事件.&lt;/p&gt;&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>想要触发这个事件，可以使用如下代码来实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#btn&quot;).trigger(&quot;myClick&quot;);</span><br></pre></td></tr></table></figure>
+<h5 id="3-传递数据"><a href="#3-传递数据" class="headerlink" title="3.传递数据"></a>3.传递数据</h5><p>trigger(type[,data])方法有两个参数，第1个参数是要触发的事件类型，第2个参数是要传递给事件处理函数的附加数据，以数组形式传递。通常可以通过传递一个参数给回调函数来区别这次事件是代码触发的还是用户触发的。<br>下面是一个传递数据的例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#btn&quot;).bind(&quot;myClick&quot;,function() &#123;</span><br><span class="line">    $(&quot;#test&quot;).append(&quot;&lt;p&gt;&quot; + message1 + message2 +&quot;&lt;/p&gt;&quot;);</span><br><span class="line">&#125;);</span><br><span class="line">$(&quot;#btn&quot;).trigger(&quot;myClick&quot;,[&quot;我都自定义&quot;,&quot;事件&quot;]);</span><br></pre></td></tr></table></figure>
+<h5 id="4-执行默认操作"><a href="#4-执行默认操作" class="headerlink" title="4.执行默认操作"></a>4.执行默认操作</h5><p>trigger()方法触发事件，会执行浏览器默认操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;input&quot;).trigger(&quot;focus&quot;);</span><br></pre></td></tr></table></figure>
+<p>以上代码不仅会触发为input元素绑定的focus事件，也会使input元素本身得到焦点<br>如果只想触发绑定的focus事件，而不想执行浏览器默认操作，可以使用jQuery中另一个类似的方法–triggerHandler()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;input&quot;).triggerHandler(&quot;focus&quot;);</span><br></pre></td></tr></table></figure>
+<h4 id="其他用法"><a href="#其他用法" class="headerlink" title="其他用法"></a>其他用法</h4><p>前面已经对bind()方法进行了介绍，bind()方法不仅能为元素绑定浏览器支持的具有相同名称的事件，也可以绑定自定义事件。不仅如此，bind()方法还能做很多事情。</p>
+<h5 id="1-添加事件命名空间，便于管理"><a href="#1-添加事件命名空间，便于管理" class="headerlink" title="1.添加事件命名空间，便于管理"></a>1.添加事件命名空间，便于管理</h5><p>例如可以把为元素绑定的多个事件类型用命名空间规范起来，jQuery代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$(function() &#123;</span><br><span class="line">    $(&quot;div&quot;).bind(&quot;click.plugin&quot;,function() &#123;</span><br><span class="line">        $(&quot;body&quot;).append(&quot;&lt;p&gt;click事件&lt;/p&gt;&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(&quot;div&quot;).bind(&quot;mouseover.plugin&quot;,function() &#123;</span><br><span class="line">        $(&quot;body&quot;).append(&quot;&lt;p&gt;mouseover事件&lt;/p&gt;&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(&quot;div&quot;).bind(&quot;dblclick&quot;,function() &#123;</span><br><span class="line">        $(&quot;body&quot;).append(&quot;&lt;p&gt;dblclick事件&lt;/p&gt;&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(&quot;button&quot;).click(function() &#123;</span><br><span class="line">        $(&quot;div&quot;).unbind(&quot;.plugin&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在所绑定的事件类型后面添加命名空间，这样在删除事件时只需要指定命名空间即可，单击button元素后，”plugin”的命名空间被删除，而不在”plugin”的命名空间的”dblclick”事件依然存在。<br>删除多个事件代码也可以写为以下链式代码，但显示上面的方式写的更少。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).unbind(&quot;click&quot;).unbind(&quot;mouseover&quot;);</span><br></pre></td></tr></table></figure>
+<h5 id="3-相同事件名称、不同命名空间执行方法"><a href="#3-相同事件名称、不同命名空间执行方法" class="headerlink" title="3.相同事件名称、不同命名空间执行方法"></a>3.相同事件名称、不同命名空间执行方法</h5><p>例如可以为元素绑定相同的事件类型，然后以命名空间的不同按需调用，jQuery代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(function() &#123;</span><br><span class="line">    $(&quot;div&quot;).bind(&quot;click&quot;,function() &#123;</span><br><span class="line">        $(&quot;body&quot;).append(&quot;&lt;p&gt;click事件&lt;/p&gt;&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(&quot;div&quot;).bind(&quot;click.plugin&quot;,function() &#123;</span><br><span class="line">        $(&quot;body&quot;).append(&quot;&lt;p&gt;click.plugin事件&lt;/p&gt;&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(&quot;button&quot;).click(function() &#123;</span><br><span class="line">        $(&quot;div&quot;).trigger(&quot;click!&quot;);  //注意click后面的感叹号</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>当单击div元素后，会同时触发click事件和click.plugin事件。如果只是单击button元素，则只会触发click事件，而不触发click.plugin事件。注意，trigger(“click!”)后面的感叹号的作用是匹配所有不包含在命名空间中的click方法。<br>如果需要两者都被触发，改为如下代码即可:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div&quot;).trigger(&quot;click&quot;);</span><br></pre></td></tr></table></figure>
+<h3 id="jQuery中的动画"><a href="#jQuery中的动画" class="headerlink" title="jQuery中的动画"></a><strong>jQuery中的动画</strong></h3><h4 id="show-方法和hide-方法"><a href="#show-方法和hide-方法" class="headerlink" title="show()方法和hide()方法"></a>show()方法和hide()方法</h4><h5 id="1-show-和hide"><a href="#1-show-和hide" class="headerlink" title="1.show()和hide()"></a>1.show()和hide()</h5><p>show()方法和hide()方法是jQuery中最基本的动画方法。在HTML文档里，为一个元素用hide()方法，会将该元素的display样式改为”none”;<br>例如，使用如下代码隐藏element元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;element&quot;).hide();</span><br></pre></td></tr></table></figure>
+<p>这段代码的功能与用css()方法设置display属性效果相同:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.css(&quot;display&quot;,&quot;none&quot;);</span><br></pre></td></tr></table></figure>
+<p>show()方法和hide()方法在不带任何参数的情况下，相当于css(“display”,”none/block/inline”)，作用是立即隐藏或显示匹配的元素，不会有任何动画。如果希望在调用show()方法时，元素慢慢地显示出来，可以为show()方法指定一个速度参数。<br>slow—-600毫秒；normal—-400毫秒；fast—-200毫秒</p>
+<h5 id="2-fadeIn-方法和fadeOut-方法"><a href="#2-fadeIn-方法和fadeOut-方法" class="headerlink" title="2.fadeIn()方法和fadeOut()方法"></a>2.fadeIn()方法和fadeOut()方法</h5><p>与show()方法不相同的是，fadeIn()方法和fadeOut()方法只改变元素的不透明度。fadeOut()方法会在指定的一段时间内降低元素的不透明度，直到元素完全消失(“display”,”none”)。fadeIn()方法则相反。</p>
+<h5 id="3-slideUp-和slideDown-方法"><a href="#3-slideUp-和slideDown-方法" class="headerlink" title="3.slideUp()和slideDown()方法"></a>3.slideUp()和slideDown()方法</h5><p>slideUp()方法和slideDown()方法只会改变元素的高度。如果一个元素的display属性值为”none”,当调用slideDown()方法时，这个元素将由上至下延伸显示。slideUp()方法正好相反，元素将由下到上缩短隐藏。</p>
+<h5 id="4-自定义动画方法animate"><a href="#4-自定义动画方法animate" class="headerlink" title="4.自定义动画方法animate()"></a>4.自定义动画方法animate()</h5><p>前面已经讲了3种类型的动画。其中show()方法和hide()方法会同时修改元素的多个样式属性，即高度、宽度和不透明度；fadeOut()方法和fadeIn()方法只会修改元素的不透明度；slideDown()方法和slideUp()方法只会改变元素的高度。<br>animate()方法语法结构为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">animate(params,speed.callback);</span><br></pre></td></tr></table></figure>
+<p>参数说明如下：<br>1.params:一个包含样式属性及值的映射，比如{property1:”value1”,property2:”value2”…}<br>2.speed:速度参数，可选<br>3.callback:在动画完成时执行的函数，可选。</p>
+<h5 id="1-自定义简单动画"><a href="#1-自定义简单动画" class="headerlink" title="1.自定义简单动画"></a><strong>1.自定义简单动画</strong></h5><p>前面的几个例子，从不同的方面使元素动了起来。animate()方法也可以使元素动起来，而且animate()方法更具有灵活性。通过animate()方法，能够实现更加精致新颖的动画效果。<br>首先来看一个简单例子，有一个空白的HTML文档，里面有一个id=”panel”的div元素，当div元素被单击后，能在页面上横向飘动。<br>先给这个div元素添加css样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#panel &#123;</span><br><span class="line">    position:relative;</span><br><span class="line">    width:100px;</span><br><span class="line">    height:100px;</span><br><span class="line">    border:1px solid #0050d0;</span><br><span class="line">    background:#96e555;</span><br><span class="line">    cursor:pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了使这个元素动起来，要更改元素的”left”样式属性。需要注意的是在使用animate()方法之前，为了能影响该元素的”top”、””left”、”bottom”和”right”样式属性，必须先把元素的position样式设置为”relative”或者”absolute”。现在添加jQuery代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(function() &#123;</span><br><span class="line">    $(&quot;#panel&quot;).click(function() &#123;</span><br><span class="line">        $(this).animate(&#123;left:&quot;500px&quot;&#125;,3000);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在本段代码中，首先为id为”panel”创建一个单击事件，然后对元素加入animate()方法，使元素在3秒(3000毫秒)内，向右移动500像素。</p>
+<h5 id="2-累加、累减动画"><a href="#2-累加、累减动画" class="headerlink" title="2.累加、累减动画"></a><strong>2.累加、累减动画</strong></h5><p>在之前的代码中，设置了{left:”500px”}作为动画参数，如果在500px之前加上”+=”或者”-=”符号即表示在当前位置累加或者累减。代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(function() &#123;</span><br><span class="line">    $(&quot;#panel&quot;).click(function() &#123;</span><br><span class="line">        $(this).animate(&#123;left:&quot;+=500px&quot;&#125;,300); //在当前位置累加500px</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="3-多重动画"><a href="#3-多重动画" class="headerlink" title="3.多重动画"></a><strong>3.多重动画</strong></h5><p>1.同时执行多个动画。<br>在上面的例子中，通过控制属性left的值实现了动画的效果，这是一个很单一的动画。如果需要同时执行多个动画，例如在元素向右滑动的同时，放大元素的高度。根据animate()方法的语法结构，可以写出如下的jQuery代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(function() &#123;</span><br><span class="line">    $(&quot;#myImg&quot;).click(function() &#123;</span><br><span class="line">        $(this).animate(&#123;left:&quot;500px&quot;,height:&quot;200px&quot;&#125;,3000);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>运行代码后，div元素在向右滑动的同时，也会放大高度。<br>2.按顺序执行多个动画<br>上例中，两个动画效果(left:”500px”和height:”200px”)是同时发生的，如果想要按顺序执行动画，例如让div元素先向右滑动，然后再放大它的高度，只需把代码拆开，然后按照顺序写就可以了，jQuery代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(this).animate(&#123;left:&quot;500px&quot;&#125;,3000);</span><br><span class="line">$(this).animate(&#123;height:&quot;200px&quot;&#125;,3000);</span><br></pre></td></tr></table></figure>
+<p>因为animate()方法都是对同一个jQuery对象进行操作，所以也可以改为链式的写法，代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(this).animate(&#123;left:&quot;500px&quot;&#125;,3000).animate(&#123;height:&quot;200px&quot;&#125;,3000);</span><br></pre></td></tr></table></figure>
+<p>这样一来，就满足上文提出的需求了。在”left”这个定位属性改变之前，”height”属性将不会被改变。像这丫能够，动画效果的执行具有先后顺序，称为”动画队列”。<br>4.综合动画<br>接下来将完成更复杂的动画。单击div元素后让它向右移动的同时增大它的高度，并将它的不透明度从50%变换到100%，然后再让它从上到下移动，同时它的宽度变大，当完成这些效果后，让它淡出的方式隐藏。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(function() &#123;</span><br><span class="line">    $(&quot;#panel&quot;).css(&quot;opacity&quot;,&quot;0.5&quot;);</span><br><span class="line">    $(&quot;#panel&quot;).click(function() &#123;</span><br><span class="line">        $(this).animate(&#123;left:&quot;400px&quot;,height:&quot;200px&quot;,&quot;opacity&quot;:&quot;1&quot;&#125;,3000)</span><br><span class="line">               .animate(&#123;top:&quot;200px&quot;,width:&quot;200px&quot;&#125;,3000)</span><br><span class="line">               .fadeOut(&quot;slow&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>运行代码后，动画效果一步步执行完毕。通过这个例子可以看出，为同意元素应用多重效果后，可以通过链式方式对这些效果进行排队。</p>
+<h5 id="动画回调函数"><a href="#动画回调函数" class="headerlink" title="动画回调函数"></a><strong>动画回调函数</strong></h5><p>在上例中，如果想在最后一步切换元素的CSS样式，而不是隐藏元素:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css(&quot;border&quot;,&quot;5px solid blue&quot;);</span><br></pre></td></tr></table></figure>
+<p>如果只是按照常规的方式，将fadeOut(“slow”)改为css(“border”,”5px solid blue”)并不能得到预期效果。预期的效果是在动画的最后一步改变元素的样式，而实际的效果是，刚开始执行动画的时候，css()方法就被执行了。<br>出现这个问题的原因是css()方法并不会加入到动画队列中，而是立即执行。可以使用回调函数(callback)对非动画方法实现排队。只要把css()方法写在最后一个动画的回调函数里即可。代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#panel&quot;).click(function() &#123;</span><br><span class="line">    $(this).animate(&#123;left:&quot;400px&quot;,height:&quot;200px&quot;,opacity:&quot;1&quot;&#125;,3000)</span><br><span class="line">           .animate(&#123;top:&quot;200px&quot;,width:&quot;200px&quot;&#125;,3000,function() &#123;</span><br><span class="line">               $(this).css(&quot;border&quot;,&quot;5px solid blue&quot;);</span><br><span class="line">           &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这样一来，css()方法就加入到动画队列中了，从而满足了上文提出的需求。<br>callback回调函数适用于jQuery所有的动画效果方法，例如slideDown()方法的回调函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#element&quot;).slideDown(&quot;normal&quot;,function() &#123;</span><br><span class="line">    //在效果完成后做其他的事情</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="停止动画和判断是否处于动画状态"><a href="#停止动画和判断是否处于动画状态" class="headerlink" title="停止动画和判断是否处于动画状态"></a><strong>停止动画和判断是否处于动画状态</strong></h5><p>1.停止元素的动画<br>很多时候需要停止匹配元素正在进行的动画，例如上例的动画，如果需要在某处停止动画，需要使用stop()方法。stop()方法的语法结构为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stop([clearQueue][,gotoEnd]);</span><br></pre></td></tr></table></figure>
+<p>参数clearQueue和gotoEnd都是可选的参数，为Boolean值(true或false)。clearQueue代表是否清空未执行完的动画队列，gotoEnd代表是否直接将正在执行的动画跳转到末状态。<br>如果直接使用stop()方法，则会停止当前正在进行的动画，如果接下来还有动画等待继续进行，则以当前状态开始接下来的动画。经常会遇到这种情况，在为一个元素绑定hover事件之后，用户把光标移入元素时会触发动画效果，而这个动画还没结束时，用户就将光标移除这个元素了，那么光标移除的动画效果将会被放进队列之中，等待光标移入的动画结束后再执行。因此如果光标移入移除得过快就会导致动画动画效果与光标的动作不一致。此时只要再光标移入、移除动画之前加入stop()方法，就能解决这个问题。stop()方法会结束当前正在进行的动画，并立即执行队列中的下一个动画。以下代码就可以解决刚才的问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#panel&quot;).hover(function() &#123;</span><br><span class="line">    $(this).stop()</span><br><span class="line">           .animate(&#123;height:&quot;150&quot;,width:&quot;300&quot;&#125;,200);</span><br><span class="line">&#125;,function() &#123;</span><br><span class="line">    $(this).stop()</span><br><span class="line">           .animate(&#123;height:&quot;22&quot;,width:&quot;60&quot;&#125;,300);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>如果遇到组合动画，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#panel&quot;).hover(function() &#123;</span><br><span class="line">    $(this).stop()</span><br><span class="line">           .animate(&#123;height:&quot;150&quot;&#125;,200)  //如果在此时出发了光标移出的事件将执行下面的动画而非光标移出事件的动画</span><br><span class="line">           .animate(&#123;width:&quot;300&quot;&#125;,300);           </span><br><span class="line">    &#125;,function() &#123;</span><br><span class="line">        $(this).stop()</span><br><span class="line">               .animate(&#123;height:&quot;22&quot;&#125;,200)</span><br><span class="line">               .animate(&#123;width:&quot;60&quot;&#125;,300);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>此时只用一个不带参数的stop()方法就显得力不从心了。因为stop()方法只会停止正在进行的动画，如果动画正执行在第1阶段（改变height的阶段），则触发移出事件后，只会停止当前的动画，并继续进行下面的animate({width:”300”},300)动画，而光标移出事件中的动画要等这个动画结束后才会继续执行，这显然不是预期的结果。这种情况下stop()方法的第1个参数就发挥作用了，可以把第1个参数（clearQueue）设置为true，此时程序会把当前元素接下来尚未执行完的动画队列都清空。把上面的的代码改成如下代码，就能实现预期的效果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#panel&quot;).hover(function() &#123;</span><br><span class="line">     $(this).stop(true)</span><br><span class="line">            .animate(&#123;height:&quot;150&quot;&#125;,200) //如果在此时出发了光标移出的事件直接跳过后面的动画队列</span><br><span class="line">            .animate(&#123;width:&quot;300&quot;&#125;,300);           </span><br><span class="line">     &#125;,function() &#123;</span><br><span class="line">         $(this).stop(true)</span><br><span class="line">                .animate(&#123;height:&quot;22&quot;&#125;,200)</span><br><span class="line">                .animate(&#123;width:&quot;60&quot;&#125;,300)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>第2个参数（gotoEnd）可以用于让正在执行的动画直接到达结束时刻的状态，通常用于后一个动画需要基于前一个动画的末状态的情况，可以通过stop(false,true)这种方式来让当前动画直接到达末状态。<br>当然两者结合起来使用stop(true,true),即停止当前动画并直接到达当前动画的末状态，并清空动画队列。<br>注意，jQuery只能设置正在执行的动画的最终状态，而没有提供直接到达未执行动画队列最终状态的方法。例如有一组动画:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;div.content&quot;)</span><br><span class="line">    .animate(&#123;width:&quot;300&quot;&#125;,200)</span><br><span class="line">    .animate(&#123;height:&quot;150&quot;&#125;,300)</span><br><span class="line">    .animate(&#123;opacity:&quot;.2&quot;&#125;,2000)</span><br></pre></td></tr></table></figure>
+<p>无论怎么设置stop()方法，均无法在改变”width”或者”height”时，将此div元素的末状态变成300 X 150 的大小，并且设置透明度为0.2.</p>
+<h5 id="2-判断元素是否处于动画状态"><a href="#2-判断元素是否处于动画状态" class="headerlink" title="2.判断元素是否处于动画状态"></a>2.判断元素是否处于动画状态</h5><p>在使用animate()方法的时候，要避免动画积累而导致的动画与用户的行为不一致。当用户快速在某个元素上执行animate()动画时，就会出现动画积累。解决方法是判断元素是否正处于动画状态，如果元素不处于动画状态，才为元素添加新的动画，否则不添加。代码如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (!$(element).is(&quot;:animated&quot;)) &#123;    //判断元素是否正处于动画状态</span><br><span class="line">    //如果当前没有进行动画，则添加新动画</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>这个判断方法在animate()动画中经常被用到，需要特别注意。</strong></p>
+<h4 id="动画方法概括"><a href="#动画方法概括" class="headerlink" title="动画方法概括"></a><strong>动画方法概括</strong></h4><p>从基本动画方法hide()和show()到fadeIn()和fadeOut()，然后到slideUp()和slideDown().再到自定义动画方法animate().在介绍如此多的动画方法后，现总结概括如下：<br>1.改变样式属性<br><img src="http://img.blog.csdn.net/20171217125757677?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>需要特别注意animate()方法，可以使用它来替代其他所有动画方法。<br>用animate()方法代替show()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).animate(&#123;height:&quot;show&quot;,width:&quot;show&quot;,opacity:&quot;show&quot;&#125;,400)</span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).show(400);</span><br></pre></td></tr></table></figure>
+<p>用animate()方法代替fadein()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).animate(&#123;opacity:&quot;show&quot;&#125;,400)</span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).fadeIn(400);</span><br></pre></td></tr></table></figure>
+<p>用animate()方法代替slideDown()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).animate(&#123;height:&quot;show&quot;&#125;,400);</span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).slideDown(400);</span><br></pre></td></tr></table></figure>
+<p>用animate()方法代替fadeTo()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).animate(&#123;opacity:&quot;0.6&quot;&#125;,400)</span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;p&quot;).fadeTo(400,0.6);</span><br></pre></td></tr></table></figure>
+<p>事实上，这些动画就是animate(）方法的一种内置了特定样式属性的简写形式。在animate()方法中，这些特定样式的属性值可以为”show”、”hide”，也可以是自定义数字。</p>
+<h5 id="2-动画队列"><a href="#2-动画队列" class="headerlink" title="2.动画队列"></a>2.动画队列</h5><p>1.一组元素上的动画效果<br>当在一个animate()方法中应用多个属性时，动画是同时发生的。<br>当以链式的写法应用动画方法时，动画是按照顺序发生的<br>2.多组元素上的动画效果<br>默认情况下，动画都是同时发生的。<br>当以回调的形式应用动画方式时，动画是按照回调顺序发生的。<br>另外，在动画方法中，要注意其他非动画方法会插队，例如css()方法要使非动画方法也按照顺序执行，需要把这些方法写在动画方法的回调函数中。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/11/锋利的jQuery-DOM操作/" rel="next" title="锋利的jQuery-DOM操作">
+                <i class="fa fa-chevron-left"></i> 锋利的jQuery-DOM操作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/17/jquery attr方法获取input的checked属性问题/" rel="prev" title="jQuery attr方法获取input的checked属性问题">
+                jQuery attr方法获取input的checked属性问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="蓝色味道丶" />
+            
+              <p class="site-author-name" itemprop="name">蓝色味道丶</p>
+              <p class="site-description motion-element" itemprop="description">云深无迹。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liuxilei" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liuxilei@qq.com" target="_blank" title="email">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>email</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery中的事件和动画"><span class="nav-number">1.</span> <span class="nav-text">jQuery中的事件和动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery中的事件"><span class="nav-number">1.1.</span> <span class="nav-text">jQuery中的事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加载DOM"><span class="nav-number">1.1.1.</span> <span class="nav-text">加载DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-执行时机"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1.执行时机</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-简写方式"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">3.简写方式</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件绑定"><span class="nav-number">1.1.2.</span> <span class="nav-text">事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-基本效果"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1.基本效果</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合成事件"><span class="nav-number">1.1.3.</span> <span class="nav-text">合成事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件冒泡"><span class="nav-number">1.1.4.</span> <span class="nav-text">事件冒泡</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#事件对象"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">事件对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#停止事件冒泡"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">停止事件冒泡</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#阻止默认事件"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">阻止默认事件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件对象的属性"><span class="nav-number">1.1.5.</span> <span class="nav-text">事件对象的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-event-type-方法"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">1.event.type()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-event-preventDefault-方法"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">2.event.preventDefault()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-event-stopPropagation-方法"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">3.event.stopPropagation()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-event-target-方法"><span class="nav-number">1.1.5.4.</span> <span class="nav-text">4.event.target()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-event-relatedTarget-方法"><span class="nav-number">1.1.5.5.</span> <span class="nav-text">5.event.relatedTarget()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-event-pageX-方法-event-pageY-方法"><span class="nav-number">1.1.5.6.</span> <span class="nav-text">6.event.pageX()方法/event.pageY()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-event-which-方法"><span class="nav-number">1.1.5.7.</span> <span class="nav-text">7.event.which()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-event-metaKey-方法"><span class="nav-number">1.1.5.8.</span> <span class="nav-text">8.event.metaKey()方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除事件"><span class="nav-number">1.1.6.</span> <span class="nav-text">移除事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟操作"><span class="nav-number">1.1.7.</span> <span class="nav-text">模拟操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-触发自定义事件"><span class="nav-number">1.1.7.1.</span> <span class="nav-text">2.触发自定义事件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-传递数据"><span class="nav-number">1.1.7.2.</span> <span class="nav-text">3.传递数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-执行默认操作"><span class="nav-number">1.1.7.3.</span> <span class="nav-text">4.执行默认操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他用法"><span class="nav-number">1.1.8.</span> <span class="nav-text">其他用法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-添加事件命名空间，便于管理"><span class="nav-number">1.1.8.1.</span> <span class="nav-text">1.添加事件命名空间，便于管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-相同事件名称、不同命名空间执行方法"><span class="nav-number">1.1.8.2.</span> <span class="nav-text">3.相同事件名称、不同命名空间执行方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery中的动画"><span class="nav-number">1.2.</span> <span class="nav-text">jQuery中的动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#show-方法和hide-方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">show()方法和hide()方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-show-和hide"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">1.show()和hide()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-fadeIn-方法和fadeOut-方法"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">2.fadeIn()方法和fadeOut()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-slideUp-和slideDown-方法"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">3.slideUp()和slideDown()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-自定义动画方法animate"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">4.自定义动画方法animate()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-自定义简单动画"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">1.自定义简单动画</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-累加、累减动画"><span class="nav-number">1.2.1.6.</span> <span class="nav-text">2.累加、累减动画</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-多重动画"><span class="nav-number">1.2.1.7.</span> <span class="nav-text">3.多重动画</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动画回调函数"><span class="nav-number">1.2.1.8.</span> <span class="nav-text">动画回调函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#停止动画和判断是否处于动画状态"><span class="nav-number">1.2.1.9.</span> <span class="nav-text">停止动画和判断是否处于动画状态</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-判断元素是否处于动画状态"><span class="nav-number">1.2.1.10.</span> <span class="nav-text">2.判断元素是否处于动画状态</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动画方法概括"><span class="nav-number">1.2.2.</span> <span class="nav-text">动画方法概括</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-动画队列"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">2.动画队列</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝色味道丶</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
