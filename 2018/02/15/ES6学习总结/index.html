@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="liuxilei 蓝色味道丶" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6学习总结">
+<meta property="og:url" content="https://liuxilei.github.io/2018/02/15/ES6学习总结/index.html">
+<meta property="og:site_name" content="蓝色味道丶">
+<meta property="og:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-30T14:30:11.637Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6学习总结">
+<meta name="twitter:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liuxilei.github.io/2018/02/15/ES6学习总结/"/>
+
+
+
+
+
+  <title>ES6学习总结 | 蓝色味道丶</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝色味道丶</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuxilei.github.io/2018/02/15/ES6学习总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝色味道丶">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝色味道丶">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ES6学习总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-15T10:38:32+08:00">
+                2018-02-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>我的世界会有一束光，而我永远都会在最初的地方等它。<br>亦如最初的自己</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="ES6学习总结"><a href="#ES6学习总结" class="headerlink" title="ES6学习总结"></a>ES6学习总结</h1><h2 id="第一部分：let、const命令"><a href="#第一部分：let、const命令" class="headerlink" title="第一部分：let、const命令"></a>第一部分：let、const命令</h2><h4 id="作用域部分："><a href="#作用域部分：" class="headerlink" title="作用域部分："></a>作用域部分：</h4><p>在es6之前，es5有两个作用域:全局作用域和函数作用域<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;</span><br><span class="line">   for (var i = 1;i &lt; 3;i++) &#123;</span><br><span class="line">       console.log(i);</span><br><span class="line">   &#125;</span><br><span class="line">   console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">test(); //输出结果1 2 3</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;</span><br><span class="line">   for (let i = 1;i &lt; 3;i++) &#123;</span><br><span class="line">       console.log(i);</span><br><span class="line">   &#125;</span><br><span class="line">   console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">test(); //报错:ReferenceError: i is not defined</span><br></pre></td></tr></table></figure>
+<p><strong>es6的块级作用域</strong> es6中一段代码是用{}包起来的，<strong>这个大括号里面就是一个块级作用域，在这个作用域里面声明的变量在这个外面就不存在了，可以理解成这个变量的生命周期结束了</strong>;es6中强制开启了严格模式, es5中”use strict”;来开启严格模式。</p>
+<h4 id="let、const部分："><a href="#let、const部分：" class="headerlink" title="let、const部分："></a>let、const部分：</h4><p><strong>let 声明变量不能再次声明</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;</span><br><span class="line">   let a = 1;</span><br><span class="line">   let a = 2;</span><br><span class="line">&#125;</span><br><span class="line">test();//报错:Error:Duplicate declaration(重复声明)</span><br></pre></td></tr></table></figure></p>
+<p><strong>const声明的常量是不能修改的</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;</span><br><span class="line">   const PI = 3.1415926;</span><br><span class="line">   PI = 8;</span><br><span class="line">   console.log(PI);</span><br><span class="line">&#125;</span><br><span class="line">test();//报错：&quot;PI&quot; is read-only(PI是一个只读属性)</span><br></pre></td></tr></table></figure></p>
+<p><strong>const声明时必须赋值</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;</span><br><span class="line">   const PI;</span><br><span class="line">   PI = 3.1415926;</span><br><span class="line">&#125;</span><br><span class="line">//报错:Error:Unexpected token(代码不完整)</span><br></pre></td></tr></table></figure></p>
+<p><strong>补充：const声明的常量是不能修改的，这句话不严谨</strong><br>解释：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;</span><br><span class="line">    const PI = 3.1415926;</span><br><span class="line">    const k = &#123;</span><br><span class="line">        a: 1</span><br><span class="line">    &#125;</span><br><span class="line">    k.b = 3;</span><br><span class="line">    console.log(PI,k);</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure></p>
+<p><strong>const声明的k对象是引用类型，返回值是对象存储内存中的指针，声明的k是指向对象中存储的指针 ，这个指针是不变的，但是对象本身是可变的。</strong></p>
+<h2 id="第二部分：解构赋值"><a href="#第二部分：解构赋值" class="headerlink" title="第二部分：解构赋值"></a>第二部分：解构赋值</h2><p><strong>什么是解构赋值：</strong><br>本质就是一种赋值，赋值操作符左边一种结构，右边一种结构，然后一一对应。<br><strong>解构赋值的分类</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数组解构赋值</th>
+<th style="text-align:center">对象解构赋值</th>
+<th style="text-align:center">字符串解构赋值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">布尔值解构赋值</td>
+<td style="text-align:center">函数参数解构赋值</td>
+<td style="text-align:center">数值解构赋值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>数组解构赋值</strong>（左右都是数组）、<strong>对象解构赋值</strong>（左右都是对象）、字符串解构赋值（左边是数组，右边是字符串）、布尔值解构赋值（对象解构赋值中的一种）、函数参数解构赋值（数组解构赋值在函数参数这里的应用）、数值解构赋值（对象解构赋值中的一种）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//数组解构赋值（常见）</span><br><span class="line">let a,b,rest;</span><br><span class="line">[a,b] = [1,2];</span><br><span class="line">console.log(a,b);//1，2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let a,b,rest;</span><br><span class="line">[a,b,...rest] = [1,2,3,4,5,6];</span><br><span class="line">console.log(a,b,rest); //1，2，[3,4,5,6]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//对象解构赋值（常见）</span><br><span class="line">let a,b;</span><br><span class="line">(&#123;a,b&#125; = &#123;a: 1,b: 2&#125;) //注意这里的括号</span><br><span class="line">console.log(a,b); //1，2</span><br></pre></td></tr></table></figure>
+<p><strong>数组解构赋值、对象解构赋值使用的基本方法、默认值和应用场景</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//默认值</span><br><span class="line">let a,b,c,rest;</span><br><span class="line">[a,b,c = 3] = [1,2];</span><br><span class="line">console.log(a,b,c); //1，2，3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let a,b,c,rest;</span><br><span class="line">[a,b,c] = [1,2];</span><br><span class="line">console.log(a,b,c);//1，2，undefined (默认值的设定就是为了放置这种情况)</span><br></pre></td></tr></table></figure>
+<p><strong>数组解构赋值的应用场景</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//变量的交换</span><br><span class="line">let a = 1;</span><br><span class="line">let b = 2;</span><br><span class="line">[a,b] = [b,a];</span><br><span class="line">console.log(a,b); //2，1</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//接收函数返回值 </span><br><span class="line">function f() &#123;</span><br><span class="line">    return [1,2];</span><br><span class="line">&#125;</span><br><span class="line">let a,b;</span><br><span class="line">[a,b] = f();</span><br><span class="line">console.log(a,b); //1，2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function f() &#123;</span><br><span class="line">    return [1,2,3,4,5];</span><br><span class="line">&#125;</span><br><span class="line">let a,b;</span><br><span class="line">[a,,,b] = f();</span><br><span class="line">console.log(a,b); //1，4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function f() &#123;</span><br><span class="line">    return [1,2,3,4,5];</span><br><span class="line">&#125;</span><br><span class="line">let a,b;</span><br><span class="line">[a,,...b] = f();</span><br><span class="line">console.log(a,b); /1，[3,4,5]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//对象解构赋值基本使用方法</span><br><span class="line">let o = &#123;p: 42,q: true&#125;</span><br><span class="line">let &#123;p,q&#125; = o;</span><br><span class="line">console.log(p,q); //42，true</span><br><span class="line">//默认值</span><br><span class="line">let &#123;a = 10,b = 5&#125; = &#123;a: 3&#125;;</span><br><span class="line">console.log(a,b); //3，5</span><br></pre></td></tr></table></figure>
+<p><strong>对象解构赋值应用场景</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//模拟服务端给前端的JSON对象    </span><br><span class="line">let metaData = &#123;</span><br><span class="line">    &apos;title&apos;: &apos;abc&apos;,</span><br><span class="line">    &apos;test&apos; : [&#123;</span><br><span class="line">        title: &apos;test&apos;,</span><br><span class="line">        desc: &apos;description&apos;</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br><span class="line">let &#123;title: esTitle,test: [&#123;title: cnTitle&#125;]&#125; = metaData;</span><br><span class="line">console.log(esTitle,cnTitle);</span><br></pre></td></tr></table></figure></p>
+<h2 id="第三部分：正则扩展"><a href="#第三部分：正则扩展" class="headerlink" title="第三部分：正则扩展"></a>第三部分：正则扩展</h2><h4 id="正则新增特性"><a href="#正则新增特性" class="headerlink" title="正则新增特性"></a><strong>正则新增特性</strong></h4><table>
+<thead>
+<tr>
+<th style="text-align:center">构造函数的变化</th>
+<th style="text-align:center">正则方法的扩展</th>
+<th style="text-align:center">u修饰符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">y修饰符</td>
+<td style="text-align:center">s修饰符</td>
+</tr>
+</tbody>
+</table>
+<p> 构造函数的变化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//es5创建正则的方式</span><br><span class="line">let regex = new RegExp(&apos;xyz&apos;,&apos;i&apos;);</span><br><span class="line">let regex2 = new RegExp(/xyz/i);</span><br><span class="line">console.log(regex.test(&apos;xyz123&apos;),regex2.test(&apos;xyz123&apos;));//true true</span><br><span class="line">//es6扩展的方式</span><br><span class="line">let regex3 = new RegExp(&apos;/xyz/ig&apos;,&apos;i&apos;); </span><br><span class="line">console.log(regex3.flags); //i</span><br></pre></td></tr></table></figure>
+<p>y修饰符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//y也是全局搜索</span><br><span class="line">let s = &apos;bbb_bb_b&apos;;</span><br><span class="line">let a1 = /b+/g;</span><br><span class="line">let a2 = /b+/y;</span><br><span class="line">console.log(&apos;one&apos;,a1.exec(s),a2.exec(s));   //one [&quot;bbb&quot;, index: 0, input: &quot;bbb_bb_b&quot;] [&quot;bbb&quot;, index: 0, input: &quot;bbb_bb_b&quot;]</span><br><span class="line">console.log(&apos;two&apos;,a1.exec(s),a2.exec(s)); //two [&quot;bb&quot;, index: 4, input: &quot;bbb_bb_b&quot;] null</span><br><span class="line">//sticky判断是否带y修饰符</span><br><span class="line">console.log(a1.sticky,a2.sticky); //false true</span><br></pre></td></tr></table></figure></p>
+<p>u修饰符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;u-1&apos;,/^\uD83D/.test(&apos;\uD83D\uDC2A&apos;)); //u-1 true</span><br><span class="line">console.log(&apos;u-2&apos;,/^\uD83D/u.test(&apos;\uD83D\uDC2A&apos;)); //u-2 false</span><br><span class="line"></span><br><span class="line">console.log(/\u&#123;61&#125;/.test(&apos;a&apos;));</span><br><span class="line">console.log(/\u&#123;61&#125;/u.test(&apos;a&apos;));</span><br><span class="line"></span><br><span class="line">console.log(`\u&#123;20BB7&#125;`);</span><br></pre></td></tr></table></figure></p>
+<p>//待补充…</p>
+<h2 id="第四部分：字符串扩展"><a href="#第四部分：字符串扩展" class="headerlink" title="第四部分：字符串扩展"></a>第四部分：字符串扩展</h2><h4 id="字符串新增特性"><a href="#字符串新增特性" class="headerlink" title="字符串新增特性"></a><strong>字符串新增特性</strong></h4><table>
+<thead>
+<tr>
+<th style="text-align:center">Unicode表示法</th>
+<th style="text-align:center">遍历接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">模板字符串</td>
+<td style="text-align:center">新增方法（10种）</td>
+</tr>
+</tbody>
+</table>
+<p>Unicode表示方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;a&apos;,`\u0061`); //a a</span><br><span class="line">console.log(&apos;s&apos;,`\u20BB7`); //乱码</span><br><span class="line"></span><br><span class="line">console.log(&apos;s&apos;,`\u&#123;20BB7&#125;`);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let s = &apos;?&apos;; </span><br><span class="line">console.log(&apos;length&apos;,s.length);</span><br><span class="line">console.log(&apos;0&apos;,s.charAt(0));</span><br><span class="line">console.log(&apos;1&apos;,s.charAt(1));</span><br><span class="line">console.log(&apos;at0&apos;,s.charCodeAt(0));</span><br><span class="line">console.log(&apos;at1&apos;,s.charCodeAt(1));</span><br><span class="line"></span><br><span class="line">let s1 = &apos;?a&apos;;</span><br><span class="line">console.log(&apos;length&apos;,s1.length);</span><br><span class="line">console.log(&apos;code0&apos;,s1.codePointAt(0));</span><br><span class="line">console.log(&apos;code0&apos;,s1.codePointAt(0).toString(16));</span><br><span class="line">console.log(&apos;code1&apos;,s1.codePointAt(1));</span><br><span class="line">console.log(&apos;code2&apos;,s1.codePointAt(2));</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//理解怎么用就ok</span><br><span class="line">console.log(String.fromCharCode(&apos;0x20bb7&apos;));</span><br><span class="line">console.log(String.fromCodePoint(&apos;0x20bb7&apos;));</span><br></pre></td></tr></table></figure>
+<p>字符串遍历器接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let str = &apos;\u&#123;20bb7&#125;abc&apos;;</span><br><span class="line">for (let i = 0;i &lt; str.length;i++) &#123;</span><br><span class="line">    console.log(&apos;es5&apos;,str[i]);</span><br><span class="line">&#125;</span><br><span class="line">//es5 乱码</span><br><span class="line">//es5 乱码</span><br><span class="line">//es5 a</span><br><span class="line">//es5 b</span><br><span class="line">//es5 c</span><br><span class="line">for (let code of str) &#123;</span><br><span class="line">    console.log(&apos;es6&apos;,code);</span><br><span class="line">&#125;</span><br><span class="line">//es6 吉</span><br><span class="line">//es6 a</span><br><span class="line">//es6 b</span><br><span class="line">//es6 c</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//判断字符串是否包含某个字符串，或者以某个字符串开始或结束的</span><br><span class="line">let str = &apos;string&apos;;</span><br><span class="line">console.log(&apos;includes&apos;,str.includes(&apos;c&apos;)); //includes false</span><br><span class="line">console.log(&apos;start&apos;,str.startsWith(&apos;str&apos;)); //start true</span><br><span class="line">console.log(&apos;end&apos;,str.endsWith(&apos;ng&apos;)); //end true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//把某个字符串重复两遍</span><br><span class="line">let str = &apos;abc&apos;;</span><br><span class="line">console.log(str.repeat(2)); //abcabc</span><br></pre></td></tr></table></figure>
+<p><strong>模板字符串</strong>（很重要）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let name = &apos;list&apos;;</span><br><span class="line">let info = &apos;hello world&apos;;</span><br><span class="line">let m = `i am $&#123;name&#125;,$&#123;info&#125;`; </span><br><span class="line">console.log(m); //i am list,hello world</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//es7草案</span><br><span class="line">//补白</span><br><span class="line">console.log(&apos;1&apos;.padStart(2,&apos;0&apos;)); //01</span><br><span class="line">console.log(&apos;1&apos;.padEnd(2,&apos;0&apos;)); //10</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//标签模板(很重要)</span><br><span class="line">//作用：过滤html字符串，防止xss攻击;处理多语言转换，通过不同的return返回不同的语言</span><br><span class="line">let user = &#123;</span><br><span class="line">    name: &apos;list&apos;,</span><br><span class="line">    info: &apos;hello world&apos;</span><br><span class="line">&#125;;</span><br><span class="line">console.log(abc`i am $&#123;user.name&#125;,$&#123;user.info&#125;`); </span><br><span class="line">function abc(s,v1,v2) &#123;</span><br><span class="line">    console.log(s,v1,v2);</span><br><span class="line">    return s + v1 + v2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//用的不多，了解即可 raw</span><br><span class="line">console.log(String.raw`Hi\n$&#123;1+2&#125;`); //Hi\n3</span><br><span class="line">console.log(`Hi\n$&#123;1+2&#125;`);</span><br><span class="line">\\Hi</span><br><span class="line">\\3</span><br></pre></td></tr></table></figure>
+<h2 id="第五部分：数值扩展"><a href="#第五部分：数值扩展" class="headerlink" title="第五部分：数值扩展"></a>第五部分：数值扩展</h2><h4 id="数值处理新增特性"><a href="#数值处理新增特性" class="headerlink" title="数值处理新增特性"></a><strong>数值处理新增特性</strong></h4><ol>
+<li>新增方法</li>
+<li>方法调整</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(0b111110111); //503 (二进制)</span><br><span class="line">console.log(0o767); //503 (八进制)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//使用频率不高，了解即可</span><br><span class="line">console.log(&apos;15&apos;,Number.isFinite(15));  //15 true</span><br><span class="line">console.log(&apos;NaN&apos;,Number.isFinite(NaN)); //NaN false</span><br><span class="line">console.log(&apos;1/0&apos;,Number.isFinite(&apos;true&apos;/0)); //1/0 false</span><br><span class="line">console.log(&apos;NaN&apos;,Number.isNaN(NaN)); NaN true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//判断这个数是不是一个整数</span><br><span class="line">console.log(&apos;25&apos;,Number.isInteger(25)); //25 true</span><br><span class="line">console.log(&apos;25.0&apos;,Number.isInteger(25.0)); //25.0 true</span><br><span class="line">console.log(&apos;25.1&apos;,Number.isInteger(25.1)); //25.1 false</span><br><span class="line">console.log(&apos;25字符串&apos;,Number.isInteger(&apos;25&apos;)); //&apos;25&apos; false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;最大上限:&apos;,Number.MAX_SAFE_INTEGER,&apos;最小下限:&apos;,Number.MIN_SAFE_INTEGER);</span><br><span class="line">console.log(&apos;10&apos;,Number.isSafeInteger(10)); //10 true</span><br><span class="line">console.log(&apos;a&apos;,Number.isSafeInteger(&apos;a&apos;)); //a false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//取小数的整数部分(常用)</span><br><span class="line">console.log(&apos;4.1&apos;,Math.trunc(4.1)); // 4.1 4</span><br><span class="line">console.log(&apos;4.9&apos;,Math.trunc(4.9)); //4.9 4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//判断是否为正数、负数、0 返回值分别为1、-1、0</span><br><span class="line">console.log(&apos;-5&apos;,Math.sign(-5)); //-5 -1</span><br><span class="line">console.log(&apos;0&apos;,Math.sign(0)); //0 0</span><br><span class="line">console.log(&apos;5&apos;,Math.sign(5)); //5 1</span><br><span class="line">console.log(&apos;50&apos;,Math.sign(&apos;50&apos;));//自动把&apos;50&apos;字符串转换为数值再进行判断 //&apos;50&apos; 1</span><br><span class="line">console.log(&apos;foo&apos;,Math.sign(&apos;foo&apos;)); //foo NaN</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//立方根</span><br><span class="line">console.log(&apos;-1&apos;,Math.cbrt(-1)); //-1 -1</span><br><span class="line">console.log(&apos;8&apos;,Math.cbrt(8)); //8 2</span><br></pre></td></tr></table></figure>
+<h2 id="第六部分：数组扩展"><a href="#第六部分：数组扩展" class="headerlink" title="第六部分：数组扩展"></a>第六部分：数组扩展</h2><h4 id="数组新增特性"><a href="#数组新增特性" class="headerlink" title="数组新增特性"></a><strong>数组新增特性</strong></h4><table>
+<thead>
+<tr>
+<th style="text-align:center">Array.from</th>
+<th style="text-align:center">Array.of</th>
+<th style="text-align:center">copyWithin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">find\findIndex</td>
+<td style="text-align:center">fill</td>
+<td style="text-align:center">entries\keys\values</td>
+</tr>
+<tr>
+<td style="text-align:center">includes</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//把一组数据转成数组</span><br><span class="line">let arr = Array.of(3,4,7,9,11);</span><br><span class="line">console.log(&apos;arr=&apos;,arr); //arr= [3,4,7,9,11]</span><br><span class="line"></span><br><span class="line">let empty = Array.of();</span><br><span class="line">console.log(&apos;empty&apos;,empty); //empty []</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//Array.from:把一些伪数组、集合转换为真正的数组</span><br><span class="line">let p = document.querySelectorAll(&apos;p&apos;);</span><br><span class="line">let pArr = Array.from(p);</span><br><span class="line">console.log(pArr);</span><br><span class="line">pArr.forEach(function(item) &#123;</span><br><span class="line">    console.log(item.textContent);</span><br><span class="line">&#125;)</span><br><span class="line">//类似与map的作用</span><br><span class="line">console.log(Array.from([1,3,5],function(item) &#123;</span><br><span class="line">    return item * 2;</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//填充数组</span><br><span class="line">console.log(&apos;fill-7&apos;,[1,&apos;a&apos;,undefined].fill(7)); //fill-7 [7,7,7]</span><br><span class="line">console.log(&apos;fill,pos&apos;,[&apos;a&apos;,&apos;b&apos;,&apos;c&apos;].fill(7,1,3)); //fill,pos [&apos;a&apos;,7,7]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//遍历新方法</span><br><span class="line">for (let index of [&apos;1&apos;,&apos;c&apos;,&apos;ks&apos;].keys()) &#123;</span><br><span class="line">    console.log(&apos;keys&apos;,index);</span><br><span class="line">&#125;</span><br><span class="line">//keys 0</span><br><span class="line">//keys 1</span><br><span class="line">//keys 2</span><br><span class="line">//要babel-polyfill，不然不支持</span><br><span class="line">for (let value of [&apos;1&apos;,&apos;c&apos;,&apos;ks&apos;].values()) &#123;</span><br><span class="line">    console.log(&apos;values&apos;,value);</span><br><span class="line">&#125;</span><br><span class="line">//values 1</span><br><span class="line">//values c</span><br><span class="line">//values ks</span><br><span class="line">for (let [index,value] of [&apos;1&apos;,&apos;c&apos;,&apos;ks&apos;].entries()) &#123;</span><br><span class="line">    console.log(&apos;values&apos;,index,value);</span><br><span class="line">&#125;</span><br><span class="line">//values 0 1</span><br><span class="line">//values 1 c</span><br><span class="line">//values 2 ks</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//在当前数组内部把指定位置的成员复制到其他位置（使用场景不多，使用频率不高）</span><br><span class="line">console.log([1,2,3,4,5].copyWithin(0,3,4)); //[4,2,3,4,5]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//查找 功能更强</span><br><span class="line">console.log([1,2,3,4,5,6].find(function(item) &#123;</span><br><span class="line">    return item &gt; 3;</span><br><span class="line">&#125;)); //4（找到第一个满足条件的数组成员，不继续往后查找）</span><br><span class="line">console.log([1,2,3,4,5,6].findIndex(function(item) &#123;</span><br><span class="line">    return item &gt; 3;</span><br><span class="line">&#125;)); //3 （找到第一个满足条件的数组成员，不继续往后查找，返回这个成员的索引位置）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//和find差不多的作用，不过实用效果更好,可以判断NaN</span><br><span class="line">console.log(&apos;number&apos;,[1,2,NaN].includes(1)); //number true</span><br><span class="line">console.log(&apos;number&apos;,[1,2,NaN].includes(NaN)); //number true</span><br></pre></td></tr></table></figure>
+<h2 id="第七部分：函数扩展"><a href="#第七部分：函数扩展" class="headerlink" title="第七部分：函数扩展"></a>第七部分：函数扩展</h2><h4 id="函数新增特性"><a href="#函数新增特性" class="headerlink" title="函数新增特性"></a><strong>函数新增特性</strong></h4><table>
+<thead>
+<tr>
+<th style="text-align:center">参数默认值</th>
+<th style="text-align:center">rest参数</th>
+<th style="text-align:center">扩展运算符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">箭头函数</td>
+<td style="text-align:center">this绑定</td>
+<td style="text-align:center">尾调用</td>
+</tr>
+</tbody>
+</table>
+<p>参数默认值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//默认值后面不能再有没有默认值的变量!!!</span><br><span class="line">function test(x,y = &apos;world&apos;) &#123;</span><br><span class="line">    console.log(&apos;默认值&apos;,x,y);</span><br><span class="line">&#125;</span><br><span class="line">test(&apos;hello&apos;); //hello world</span><br><span class="line">test(&apos;hello&apos;,&apos;kill&apos;); //hello kill</span><br></pre></td></tr></table></figure></p>
+<p>与作用域相关的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let x = &apos;test&apos;;</span><br><span class="line">function test2(x,y = x) &#123;</span><br><span class="line">    console.log(&apos;作用域&apos;,x,y);</span><br><span class="line">&#125;</span><br><span class="line">test2(&apos;kill&apos;); //作用域 kill kill</span><br><span class="line">test2(); //作用域 undefined undefined</span><br><span class="line"></span><br><span class="line">function test3(c,y = x) &#123;</span><br><span class="line">    console.log(&apos;作用域&apos;,c,y);</span><br><span class="line">&#125;</span><br><span class="line">test3(&apos;kill&apos;); //作用域 kill test</span><br></pre></td></tr></table></figure></p>
+<p>rest参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function test4(...arg) &#123;</span><br><span class="line">    for (let v of arg) &#123;</span><br><span class="line">        console.log(&apos;rest&apos;,v);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">test4(1,2,3,4,&apos;a&apos;); </span><br><span class="line">//rest 1</span><br><span class="line">//rest 2</span><br><span class="line">//rest 3</span><br><span class="line">//rest 4</span><br><span class="line">//rest a</span><br></pre></td></tr></table></figure></p>
+<p>扩展运算符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(...[1,2,4]); //1 2 4</span><br><span class="line">console.log(&apos;a&apos;,...[1,2,4]); //a 1 2 4</span><br></pre></td></tr></table></figure></p>
+<p><strong>箭头函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//箭头函数注意this绑定</span><br><span class="line">let arrow = v =&gt; v*2;</span><br><span class="line">let arrow2 = () =&gt; 5;</span><br><span class="line">console.log(&apos;arrow&apos;,arrow(3)); //arrow 6</span><br><span class="line">console.log(&apos;arrow2&apos;,arrow2()); //arrow2 5</span><br></pre></td></tr></table></figure></p>
+<p>尾调用：好处（提升性能）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//存在于函数式编程</span><br><span class="line">//函数的最后一句话是不是一个函数</span><br><span class="line">function tail(x) &#123;</span><br><span class="line">    console.log(&apos;tail&apos;,x);</span><br><span class="line">&#125;</span><br><span class="line">function fx(x) &#123;</span><br><span class="line">    return tail(x);</span><br><span class="line">&#125;</span><br><span class="line">fx(123); //tail 123</span><br></pre></td></tr></table></figure></p>
+<h2 id="第八部分：对象扩展"><a href="#第八部分：对象扩展" class="headerlink" title="第八部分：对象扩展"></a>第八部分：对象扩展</h2><h4 id="函数新增特性-1"><a href="#函数新增特性-1" class="headerlink" title="函数新增特性"></a><strong>函数新增特性</strong></h4><table>
+<thead>
+<tr>
+<th style="text-align:center">简洁表示法</th>
+<th style="text-align:center">属性表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">扩展运算符</td>
+<td style="text-align:center">Object新增方法</td>
+</tr>
+</tbody>
+</table>
+<p>简洁表示法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">let o = 1;</span><br><span class="line">let k = 2;</span><br><span class="line">let es5 = &#123;</span><br><span class="line">    o: o,</span><br><span class="line">    k: k</span><br><span class="line">&#125;;</span><br><span class="line">let es6 = &#123;</span><br><span class="line">    o,</span><br><span class="line">    k</span><br><span class="line">&#125;</span><br><span class="line">console.log(es5,es6); //&#123;k:2,o:1&#125; &#123;k:2,o:1&#125;</span><br><span class="line"></span><br><span class="line">let es5_method = &#123;</span><br><span class="line">    hello: function() &#123;</span><br><span class="line">        console.log(&apos;hello&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">let es6_method = &#123;</span><br><span class="line">    hello() &#123;</span><br><span class="line">        console.log(&apos;hello&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">es5_method.hello(); //hello</span><br><span class="line">es6_method.hello(); //hello</span><br></pre></td></tr></table></figure></p>
+<p>属性表达式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let a = &apos;b&apos;;</span><br><span class="line">let es5_obj = &#123;</span><br><span class="line">    a: &apos;c&apos;,</span><br><span class="line">    b: &apos;c&apos;</span><br><span class="line">&#125;;</span><br><span class="line">let es6_obj = &#123;</span><br><span class="line">    [a]: &apos;c&apos;</span><br><span class="line">&#125;;</span><br><span class="line">console.log(es5_obj,es6_obj); &#123;a:&apos;c&apos;,b:&apos;c&apos;&#125; &#123;b:&apos;c&apos;&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//新增API</span><br><span class="line">//is 判断两个值是否相等</span><br><span class="line">console.log(&apos;字符串&apos;,Object.is(&apos;abc&apos;,&apos;abc&apos;),&apos;abc&apos; === &apos;abc&apos;); //true true</span><br><span class="line">console.log(&apos;数组&apos;,Object.is([],[]),[] === []); //false false 注意数组是引用类型</span><br><span class="line">//浅拷贝（只拷贝自身的属性，继承的不拷贝、还有不可枚举的属性也不拷贝）</span><br><span class="line">console.log(&apos;拷贝&apos;,Object.assign(&#123;a: &apos;a&apos;&#125;,&#123;b: &apos;b&apos;&#125;)); //&#123;a:&apos;a&apos;,b:&apos;b&apos;&#125;</span><br><span class="line"></span><br><span class="line">let test = &#123;k: 123,o: 456&#125;;</span><br><span class="line">for (let [key,value] of Object.entries(test)) &#123;</span><br><span class="line">    console.log([key,value]);</span><br><span class="line">&#125;</span><br><span class="line">// [&apos;k&apos;,123]</span><br><span class="line">// [&apos;o&apos;,456]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//babel不支持，实用性也用不到</span><br><span class="line">//扩展运算符</span><br><span class="line">let &#123;a,b...c&#125; = &#123;a: &apos;test&apos;,b: &apos;kill&apos;,c: &apos;ddd&apos;,d: &apos;ccc&apos;&#125;;</span><br><span class="line">//c的值如下：</span><br><span class="line">//c = &#123;</span><br><span class="line">//    c: &apos;ddd&apos;,</span><br><span class="line">//    d: &apos;ccc&apos;</span><br><span class="line">//&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第九部分：Symbol"><a href="#第九部分：Symbol" class="headerlink" title="第九部分：Symbol"></a>第九部分：Symbol</h2><h4 id="Symbol的概念"><a href="#Symbol的概念" class="headerlink" title="Symbol的概念"></a><strong>Symbol的概念</strong></h4><p><code>这种数据类型提供一个独一无二的值</code></p>
+<h4 id="Symbol的作用"><a href="#Symbol的作用" class="headerlink" title="Symbol的作用"></a><strong>Symbol的作用</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//声明</span><br><span class="line">let a1 = Symbol();</span><br><span class="line">let a2 = Symbol();</span><br><span class="line">console.log(a1 === a2); //false</span><br><span class="line">//另一种声明方式</span><br><span class="line">//这里a3是一个key值，用Symbol.for声明这个独一无二的值时会先去全局注册，如果注册过，返回那个值，如果没注册，则调用Symbol生成一个独一无二的值。</span><br><span class="line">let a3 = Symbol.for(&apos;a3&apos;);</span><br><span class="line">let a4 = Symbol.for(&apos;a3&apos;);</span><br><span class="line">console.log(a3 === a4); //true</span><br></pre></td></tr></table></figure>
+<p>应用场景：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">let a1 = Symbol.for(&apos;abc&apos;);</span><br><span class="line">let obj = &#123;</span><br><span class="line">    [a1]: &apos;123&apos;,</span><br><span class="line">    &apos;abc&apos;: 345,</span><br><span class="line">    &apos;c&apos;: 456</span><br><span class="line">&#125;;</span><br><span class="line">console.log(&apos;obj&apos;,obj); //obj &#123;Symbol(abc):&apos;123&apos;,abc:345,c:456&#125;</span><br><span class="line">//通过Symbol定义的属性，for in 和let of取不到该属性</span><br><span class="line">for (let [key,value] of Object.entries(obj)) &#123;</span><br><span class="line">    console.log(&apos;let of&apos;,key,value);</span><br><span class="line">&#125;</span><br><span class="line">// let of abc 345</span><br><span class="line">// let of c 456</span><br><span class="line">API:getOwnPropertySymbols获取到的是一个数组（只拿到Symbol类型的属性）</span><br><span class="line">Object.getOwnPropertySymbols(obj).forEach(function(item) &#123;</span><br><span class="line">    console.log(obj[item]);</span><br><span class="line">&#125;);</span><br><span class="line">// 123</span><br><span class="line">//取到所有属性，包括Symbol类型</span><br><span class="line">Reflect.ownKeys(obj).forEach(function(item) &#123;</span><br><span class="line">    console.log(&apos;ownKeys&apos;,item,obj[item]);</span><br><span class="line">&#125;);</span><br><span class="line">//ownKeys abc 345</span><br><span class="line">//ownKeys c 456</span><br><span class="line">//ownKeys Symbol(abc) 123</span><br></pre></td></tr></table></figure></p>
+<h2 id="第十部分：数据结构"><a href="#第十部分：数据结构" class="headerlink" title="第十部分：数据结构"></a>第十部分：数据结构</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Set的用法</th>
+<th style="text-align:center">WeakSet的用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Map的用法</td>
+<td style="text-align:center">WeakMap的用法</td>
+</tr>
+</tbody>
+</table>
+<p>Set的定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let list = new Set();</span><br><span class="line">list.add(5);</span><br><span class="line">list.add(7);</span><br><span class="line">console.log(&apos;size&apos;,list.size); //size 2</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4,5];</span><br><span class="line">let list = new Set(arr);</span><br><span class="line">console.log(&apos;size&apos;,list.size); //size 5</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//Set数据类型中元素必须唯一的</span><br><span class="line">let list = new Set();</span><br><span class="line">list.add(1);</span><br><span class="line">list.add(2);</span><br><span class="line">list.add(1);</span><br><span class="line">console.log(&apos;list&apos;,list); //list  Set&#123;1，2&#125;</span><br><span class="line"></span><br><span class="line">//去重</span><br><span class="line">let arr = [1,2,3,1,&apos;2&apos;];</span><br><span class="line">let list2 = new Set(arr);</span><br><span class="line">console.log(&apos;unque&apos;,list2); //unque Set&#123;1，2，3,&apos;2&apos;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//Set的添加、删除、清空</span><br><span class="line">let arr = [&apos;add&apos;,&apos;delete&apos;,&apos;clear&apos;,&apos;has&apos;];</span><br><span class="line">let list = new Set(arr);</span><br><span class="line">console.log(&apos;has&apos;,list.has(&apos;add&apos;)); //has true</span><br><span class="line">console.log(&apos;delete&apos;,list.delete(&apos;add&apos;),list); //delete true Set&#123;&quot;delete&quot;,&quot;clear&quot;,&quot;has&quot;&#125;</span><br><span class="line">list.clear();</span><br><span class="line">console.log(&apos;list&apos;,list); //list Set&#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">//Set的遍历</span><br><span class="line">let arr = [&apos;add&apos;,&apos;delete&apos;,&apos;clear&apos;,&apos;has&apos;];</span><br><span class="line">let list = new Set(arr);</span><br><span class="line"></span><br><span class="line">for (let key of list.keys()) &#123;</span><br><span class="line">    console.log(&apos;keys&apos;,key);</span><br><span class="line">&#125;</span><br><span class="line">//keys add</span><br><span class="line">//keys delete</span><br><span class="line">//keys clear</span><br><span class="line">//keys has</span><br><span class="line">for (let value of list.values()) &#123;</span><br><span class="line">    console.log(&apos;values&apos;,value);</span><br><span class="line">&#125;</span><br><span class="line">//values add</span><br><span class="line">//values delete</span><br><span class="line">//values clear</span><br><span class="line">//values has</span><br><span class="line">for (let [key,value] of list.entries()) &#123;</span><br><span class="line">    console.log(&apos;entries&apos;,key,value);</span><br><span class="line">&#125;</span><br><span class="line">//entries add add</span><br><span class="line">//entries delete</span><br><span class="line">//entries clear</span><br><span class="line">//entries has</span><br><span class="line">list.forEach(function(item) &#123;</span><br><span class="line">    console.log(item);</span><br><span class="line">&#125;);</span><br><span class="line">//add</span><br><span class="line">//delete</span><br><span class="line">//clear</span><br><span class="line">//has</span><br></pre></td></tr></table></figure>
+<p>WeakSet</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//WeakSet中的元素只能是对象 对象都是弱引用，不会被垃圾回收机制检测</span><br><span class="line">//没有size属性,没有clear方法，不能遍历</span><br><span class="line">let weaklist = new WeakSet();</span><br><span class="line">let arg = &#123;&#125;;</span><br><span class="line">weaklist.add(arg);</span><br><span class="line">console.log(&apos;weakList&apos;,weaklist);//weakList WeakSet&#123;Object&#123;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>Map</p>
+<pre><code>//Map的基本定义
+var map = new Map();
+let arr = [&apos;123&apos;];
+map.set(arr,456);
+console.log(&apos;map&apos;,map,map.get(arr)); //map Map{[&apos;123&apos;] =&gt; 456} 456
+//第二种定义方法
+let map = new Map([[&apos;a&apos;,123],[&apos;b&apos;,456]]);
+console.log(&apos;map&apos;,map); //map Map{&quot;a&quot; =&gt; 123,&quot;b&quot; =&gt; 456}
+console.log(&apos;size&apos;,map.size); //size 2
+console.log(&apos;delete&apos;,map.delete(&apos;a&apos;),map); //delete true Map{&quot;b&quot; =&gt; 456}
+console.log(&apos;clear&apos;,map.clear(),map); //clear undefined Map{}
+</code></pre><p>遍历和Set一样<br>WeakMap</p>
+<pre><code>//接收的key值必须是对象，也没有size属性，没有clear方法，不能遍历
+let weakmap = new WeakMap();
+let o = {};
+weakmap.set(o,123);
+console.log(weakmap); //WeakMap {…} =&gt; 123
+console.log(weakmap.get(o)); //123
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/03/node.js基本操作详解（转载）gulp安装/" rel="next" title="转载node.js基本操作-gulp安装">
+                <i class="fa fa-chevron-left"></i> 转载node.js基本操作-gulp安装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/16/React学习笔记/" rel="prev" title="React学习笔记">
+                React学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="蓝色味道丶" />
+            
+              <p class="site-author-name" itemprop="name">蓝色味道丶</p>
+              <p class="site-description motion-element" itemprop="description">云深无迹。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liuxilei" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liuxilei@qq.com" target="_blank" title="email">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>email</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6学习总结"><span class="nav-number">1.</span> <span class="nav-text">ES6学习总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一部分：let、const命令"><span class="nav-number">1.1.</span> <span class="nav-text">第一部分：let、const命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域部分："><span class="nav-number">1.1.0.1.</span> <span class="nav-text">作用域部分：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#let、const部分："><span class="nav-number">1.1.0.2.</span> <span class="nav-text">let、const部分：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二部分：解构赋值"><span class="nav-number">1.2.</span> <span class="nav-text">第二部分：解构赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三部分：正则扩展"><span class="nav-number">1.3.</span> <span class="nav-text">第三部分：正则扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正则新增特性"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">正则新增特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四部分：字符串扩展"><span class="nav-number">1.4.</span> <span class="nav-text">第四部分：字符串扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串新增特性"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">字符串新增特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五部分：数值扩展"><span class="nav-number">1.5.</span> <span class="nav-text">第五部分：数值扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数值处理新增特性"><span class="nav-number">1.5.0.1.</span> <span class="nav-text">数值处理新增特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六部分：数组扩展"><span class="nav-number">1.6.</span> <span class="nav-text">第六部分：数组扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组新增特性"><span class="nav-number">1.6.0.1.</span> <span class="nav-text">数组新增特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七部分：函数扩展"><span class="nav-number">1.7.</span> <span class="nav-text">第七部分：函数扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数新增特性"><span class="nav-number">1.7.0.1.</span> <span class="nav-text">函数新增特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八部分：对象扩展"><span class="nav-number">1.8.</span> <span class="nav-text">第八部分：对象扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数新增特性-1"><span class="nav-number">1.8.0.1.</span> <span class="nav-text">函数新增特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九部分：Symbol"><span class="nav-number">1.9.</span> <span class="nav-text">第九部分：Symbol</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol的概念"><span class="nav-number">1.9.0.1.</span> <span class="nav-text">Symbol的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol的作用"><span class="nav-number">1.9.0.2.</span> <span class="nav-text">Symbol的作用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十部分：数据结构"><span class="nav-number">1.10.</span> <span class="nav-text">第十部分：数据结构</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝色味道丶</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
