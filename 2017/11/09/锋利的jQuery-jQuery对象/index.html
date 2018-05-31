@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="蓝色味道丶">
 <meta property="og:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-30T07:05:09.753Z">
+<meta property="og:updated_time" content="2018-05-31T00:59:25.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="锋利的jQuery-jQuery对象">
 <meta name="twitter:description" content="我的世界会有一束光，而我永远都会在最初的地方等它。亦如最初的自己">
@@ -348,7 +348,33 @@
 <li>丰富的插件支持</li>
 <li>完善的文档</li>
 </ol>
-<p>window.onload和$(document).ready(）的对比<br>| 区别 | window.onload | $(document).ready |<br>| :————- |:————-|: —–|<br>| 执行时机 | 必须等待网页中所有的内容加载完毕后（包括图片）才能执行 | 网页中所有DOM结构绘制完毕后就执行，可能DOM元素关联的东西并没有加载完 |<br>| 编写个数 | 不能同时编写多个一下代码无法正常执行: <code>window.onload = function() { alert(&quot;test1&quot;)};            window.onload = function() {alert(&quot;test2&quot;);</code>结果只会输出”test2”| 能同时编写多个一下代码正确执行：<code>$(document).ready(function() {alert(&quot;Hello world!&quot;)});  $(document).ready(function() {alert(&quot;Hello again!&quot;)});</code>结果两次都输出|<br>| 简化写法| 无 |可以简写成：$(function(){//…}); |</p>
+<p>window.onload和$(document).ready(）的对比</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">区别</th>
+<th style="text-align:left">window.onload</th>
+<th>$(document).ready</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">执行时机</td>
+<td style="text-align:left">必须等待网页中所有的内容加载完毕后（包括图片）才能执行</td>
+<td>网页中所有DOM结构绘制完毕后就执行，可能DOM元素关联的东西并没有加载完</td>
+</tr>
+<tr>
+<td style="text-align:left">编写个数</td>
+<td style="text-align:left">不能同时编写多个一下代码无法正常执行: <code>window.onload = function() { alert(&quot;test1&quot;)};            window.onload = function() {alert(&quot;test2&quot;);</code>结果只会输出”test2”</td>
+<td>能同时编写多个一下代码正确执行：<code>$(document).ready(function() {alert(&quot;Hello world!&quot;)});  $(document).ready(function() {alert(&quot;Hello again!&quot;)});</code>结果两次都输出</td>
+</tr>
+<tr>
+<td style="text-align:left">简化写法</td>
+<td style="text-align:left">无</td>
+<td>可以简写成：$(function(){//…});</td>
+</tr>
+</tbody>
+</table>
 <h4 id="jQuery对象"><a href="#jQuery对象" class="headerlink" title="jQuery对象"></a>jQuery对象</h4><p>jQuery对象就是通过jQuery包装DOM对象后产生的对象。<br>jQuery对象是jQuery独有的。如果一个对象是jQuery对象，那么就可以使用jQuery里的方法。例如</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#foo&quot;).html(); //获取id为foo的元素内的html代码。.html（）是jQuery里的方法</span><br></pre></td></tr></table></figure>
 <p>这段代码等同于：</p>
@@ -500,9 +526,9 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:liuxilei@qq.com" target="_blank" title="email">
+                    <a href="mailto:liuxilei@qq.com" target="_blank" title="Email">
                       
-                        <i class="fa fa-fw fa-envelope"></i>email</a>
+                        <i class="fa fa-fw fa-envelope"></i>Email</a>
                   </span>
                 
             </div>
