@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="React," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="平庸是什么？不是平凡的事业和出身，而是精神上的贫瘠和空洞。">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React学习笔记">
+<meta property="og:url" content="https://liuxilei.github.io/2018/02/16/React学习笔记/index.html">
+<meta property="og:site_name" content="蓝色味道丶">
+<meta property="og:description" content="平庸是什么？不是平凡的事业和出身，而是精神上的贫瘠和空洞。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.blog.csdn.net/20180220131958646?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://img.blog.csdn.net/20180220132025212?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-06-15T06:11:27.616Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React学习笔记">
+<meta name="twitter:description" content="平庸是什么？不是平凡的事业和出身，而是精神上的贫瘠和空洞。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20180220131958646?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liuxilei.github.io/2018/02/16/React学习笔记/"/>
+
+
+
+
+
+  <title>React学习笔记 | 蓝色味道丶</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1ddb40dd8dd58b5b96e37673213a17a5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蓝色味道丶</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuxilei.github.io/2018/02/16/React学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="蓝色味道丶">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蓝色味道丶">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">React学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-16T14:46:25+08:00">
+                2018-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>平庸是什么？不是平凡的事业和出身，而是精神上的贫瘠和空洞。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="相关知识点："><a href="#相关知识点：" class="headerlink" title="相关知识点："></a>相关知识点：</h2><h4 id="ES6"><a href="#ES6" class="headerlink" title="ES6:"></a>ES6:</h4><p>笔记：<a href="http://blog.csdn.net/liuxilei66/article/details/79327761" target="_blank" rel="noopener">ES6学习笔记</a><br>资料：<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">阮一峰ES6</a></p>
+<h4 id="node-js"><a href="#node-js" class="headerlink" title="node.js:"></a>node.js:</h4><p>官网下载安装。<br>检查安装成功的命令： node -v(node版本查询)      npm -v(npm版本查询)<br>cnpm:淘宝镜像</p>
+<h4 id="webpack"><a href="#webpack" class="headerlink" title="webpack:"></a>webpack:</h4><p>待补充：</p>
+<h4 id="window命令："><a href="#window命令：" class="headerlink" title="window命令："></a>window命令：</h4><p>cd 定位到目录，用法：cd + 路径<br>dir 列出文件列表<br>cls 清空命令提示符窗口内容<br>cd.. 定位至上层目录<br>待补充。</p>
+<h1 id="React"><a href="#React" class="headerlink" title="React:"></a><strong>React:</strong></h1><h2 id="React基础知识、"><a href="#React基础知识、" class="headerlink" title="React基础知识、"></a><strong>React基础知识、</strong></h2><p>React：用于构建用户界面的 JavaScript 库<br>特点：</p>
+<ul>
+<li>声明式：React 可以非常轻松地创建用户交互界面。为你应用的每一个状态设计简洁的视图，在数据改变时 React 也可以高效地更新渲染界面。（以声明式编写UI，可以让你的代码更加可靠，且方便调试。）</li>
+<li>组件化：创建好拥有各自状态的组件，再由组件构成更加复杂的界面。（无需再用模版代码，通过使用JavaScript编写的组件你可以更好地传递数据，将应用状态和DOM拆分开来。）</li>
+</ul>
+<h2 id="React组件基础、"><a href="#React组件基础、" class="headerlink" title="React组件基础、"></a><strong>React组件基础、</strong></h2><h3 id="一：初步配置React开发环境"><a href="#一：初步配置React开发环境" class="headerlink" title="一：初步配置React开发环境"></a><strong>一：初步配置React开发环境</strong></h3><ul>
+<li>npm项目初始化：npm init(创建一个初始化的package.json)</li>
+<li>项目依赖包安装: react、react-dom、babelify、babel-preset-react、babel-preset-es2015 （babel-core、babel-loader、webpack、webpack-dev-server）</li>
+<li>eg：npm react –save  保存到生产依赖环境<pre><code>npm react --save --dev 保存到开发依赖环境
+</code></pre><h3 id="webpack-热加载配置"><a href="#webpack-热加载配置" class="headerlink" title="webpack 热加载配置"></a>webpack 热加载配置</h3></li>
+<li>全局安装webpack webpack-dev-server</li>
+<li>项目内安装webpack webpack-dev-server</li>
+<li>实现打包 webpack –watch 监控<h3 id="项目热加载"><a href="#项目热加载" class="headerlink" title="项目热加载"></a>项目热加载</h3>浏览器：localhost:8080/webpack-dev-server/index.html</li>
+</ul>
+<h3 id="二：虚拟DOM概念"><a href="#二：虚拟DOM概念" class="headerlink" title="二：虚拟DOM概念"></a><strong>二：虚拟DOM概念</strong></h3><p><a href="https://www.zhihu.com/question/29504639/answer/73607810" target="_blank" rel="noopener">如何理解虚拟DOM?</a></p>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><ul>
+<li>组件的return 函数里返回的HTML节点必须是一个</li>
+<li>可以给外部使用的组件定义：export default class ComponentHeader extends React.Component{}<br>入口的定义： ReactDOM.render(,document.getElementById(‘’));</li>
+</ul>
+<h3 id="三：React多组件嵌套"><a href="#三：React多组件嵌套" class="headerlink" title="三：React多组件嵌套"></a><strong>三：React多组件嵌套</strong></h3><ul>
+<li>组件也可以通过参数的形式传递</li>
+<li>组件的return函数里返回的HTML节点必须是一个</li>
+<li>注意项目命名的规范与文件的结构化</li>
+<li>补充：代码中的’./‘ 表示当前目录下;.gitignore文件名写错以至于将相关包上传，以后注意！</li>
+</ul>
+<h3 id="四：JSX内置表达式"><a href="#四：JSX内置表达式" class="headerlink" title="四：JSX内置表达式"></a><strong>四：JSX内置表达式</strong></h3><ul>
+<li>{window.username == ‘’ ? ‘默认用户名’ : ‘用户名:’ + username}</li>
+<li>input中disable={} 单引号去掉</li>
+<li>{/<em>注释</em>/}</li>
+<li>HTML要显示可以进行Unicode转码。 eg:&nbsp;</li>
+<li>HTML要显示还可以通过<code>&lt;div dangerouslySetinnerHTML={ {__html:html} }&gt;&lt;/div&gt;</code> 注意此方法可能会存在XSS攻击</li>
+<li>补充：.gitignore内容写错node_module，应该是node_modules注意注意！加s</li>
+</ul>
+<h3 id="五：生命周期"><a href="#五：生命周期" class="headerlink" title="五：生命周期"></a><strong>五：生命周期</strong></h3><p>生命周期中的函数类似于<strong>钩子</strong>：钩子实际上是一个处理消息的程序段，通过系统调用，把它挂入系统。每当特定的消息发出，在没有到达目的窗口前，钩子程序就先捕获该消息，亦即钩子函数先得到控制权。这时钩子函数即可以加工处理（改变）该消息，也可以不作处理而继续传递该消息，还可以强制结束消息的传递。</p>
+<ul>
+<li>component instantiated （组件初始化） getDefaultProps (获取默认属性） getInitialState (获取初始化state) componenntWillMount (组件将要加载的函数）componentDidMount  (组件加载完毕的函数)  propschanged （属性的更改） componentWillUpdate (将要update) componentDidUpdate (update完成) componentdeleted （组件删除） componentWillUnmount （组件卸载的函数）</li>
+<li>补充:出现的问题引入的包 ‘react’、’react-dom’注意小写，创建组件 extends React.Component 写对，<br><strong>未解决问题</strong>：React Developer Tools会自动检测React组件，不过在webpack-dev-server模式下，webpack会自动将React组件放入到iframe下，导致React组件检测失败，变通方法是webpack-dev-server配置在–inline模式下即可，但是未成功，解决方法：在webpack-dev-server配置中没有inline:true去开启inline模式，因为webpack-dev-server模块无法访问webpack的配置。因此，用户必须添加webpack-dev-server的客户端入口文件到webpack的配置中，<a href="http://blog.csdn.net/liangklfang/article/details/54944012###;" target="_blank" rel="noopener">webpack-dev-server简单使用</a><br><img src="http://img.blog.csdn.net/20180220131958646?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="生命周期图"><br><img src="http://img.blog.csdn.net/20180220132025212?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbGl1eGlsZWk2Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="生命周期图"></li>
+</ul>
+<h2 id="React属性与事件、"><a href="#React属性与事件、" class="headerlink" title="React属性与事件、"></a><strong>React属性与事件、</strong></h2><h3 id="一：State-属性"><a href="#一：State-属性" class="headerlink" title="一：State 属性"></a><strong>一：State 属性</strong></h3><ul>
+<li>state对于模块属于 自身 属性</li>
+<li>初始化：this.state = {username:”Parry”};</li>
+<li>初始化可以放置在构造函数constructor里</li>
+<li>修改state:this.setState({username:’liuxilei’});</li>
+<li>state的作用域只属于当前的类，不污染其他模块</li>
+<li>补充：状态值会立即（自动）反映在虚拟dom上然后显示在dom上;ReactDOM.render(<index>,document.getElementById(‘’));这里<index>没有引号，state改变可以实时反应在页面上，不刷新</index></index></li>
+</ul>
+<h3 id="二：Props属性"><a href="#二：Props属性" class="headerlink" title="二：Props属性"></a><strong>二：Props属性</strong></h3><ul>
+<li>props 对于模块属于 外来 属性</li>
+<li>传递参数：<code>&lt;BodyIndex username=&#39;liuxilei&#39;/&gt;</code></li>
+<li>模块中接收参数：this.props.username</li>
+</ul>
+<h3 id="三：事件与数据的双向绑定"><a href="#三：事件与数据的双向绑定" class="headerlink" title="三：事件与数据的双向绑定"></a><strong>三：事件与数据的双向绑定</strong></h3><h4 id="事件的绑定：注意es6的语法"><a href="#事件的绑定：注意es6的语法" class="headerlink" title="事件的绑定：注意es6的语法"></a>事件的绑定：注意es6的语法</h4><ul>
+<li>可以在构造函数里绑定this:this.forceUpdateHandler = this.forceUpdateHandler.bind(this);<br>.或者调用时绑定：onClick = {this.changeUserInfo.bind(this,50)}<h4 id="子页面向父页面传递参数的方法"><a href="#子页面向父页面传递参数的方法" class="headerlink" title="子页面向父页面传递参数的方法"></a>子页面向父页面传递参数的方法</h4></li>
+<li>在子页面中通过调用父页面传递过来的事件props进行组件间的参数传递</li>
+<li>好好理解这里的onChange事件，为什么不用onBlur<br>补充：this的指向：类的方法内部如果含有this，它将默认指向类的实例。<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes" target="_blank" rel="noopener">MDN</a></li>
+</ul>
+<h3 id="四：可复用组件，真正让React开发快速、高效的地方"><a href="#四：可复用组件，真正让React开发快速、高效的地方" class="headerlink" title="四：可复用组件，真正让React开发快速、高效的地方"></a><strong>四：可复用组件，真正让React开发快速、高效的地方</strong></h3><h4 id="Prop验证"><a href="#Prop验证" class="headerlink" title="Prop验证"></a>Prop验证</h4><ul>
+<li><a href="https://doc.react-china.org/docs/typechecking-with-proptypes.html" target="_blank" rel="noopener">https://doc.react-china.org/docs/typechecking-with-proptypes.html</a></li>
+<li>注意: React.PropTypes 自 React v15.5 起已弃用。请使用 prop-types 库代替。！！！！<h4 id="默认Prop值"><a href="#默认Prop值" class="headerlink" title="默认Prop值"></a>默认Prop值</h4></li>
+<li>const defaultProps = {text:’Hello world’};</li>
+<li>使用方法：BodyIndex.defaultProps = defaultProps;<h4 id="传递所有参数的快捷方式"><a href="#传递所有参数的快捷方式" class="headerlink" title="传递所有参数的快捷方式"></a>传递所有参数的快捷方式</h4></li>
+<li><code>&lt;Component{...this.props} more={&#39;values&#39;}/&gt;</code></li>
+</ul>
+<h3 id="五：组件的Refs"><a href="#五：组件的Refs" class="headerlink" title="五：组件的Refs"></a><strong>五：组件的Refs</strong></h3><h4 id="操作DOM的两种方法"><a href="#操作DOM的两种方法" class="headerlink" title="操作DOM的两种方法"></a>操作DOM的两种方法</h4><ul>
+<li>原始获取方法：<code>var myDiv = document.getElementById(&#39;myDiv&#39;);React.findDOMNode(myDiv).style.color = &#39;red&#39;;</code></li>
+<li>（推荐使用）方法二的定义：<code>&lt;input ref=&#39;myInput&#39; /&gt;</code></li>
+<li>方法二的获取：this.refs.myInput</li>
+<li>Refs是访问到组件内部DOM节点唯一可靠的方法</li>
+<li>Refs会自动销毁对子组件的引用</li>
+<li>不要在render或render之前对Refs进行调用</li>
+<li>不要滥用Refs</li>
+</ul>
+<h3 id="六：独立组件间共享Mixins"><a href="#六：独立组件间共享Mixins" class="headerlink" title="六：独立组件间共享Mixins"></a><strong>六：独立组件间共享Mixins</strong></h3><ul>
+<li>不同的组件之间共用功能、共享代码</li>
+<li>和页面具有类似的生命周期</li>
+<li>ES6下的使用要安装react-mixins</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/15/ES6学习总结/" rel="next" title="ES6学习总结">
+                <i class="fa fa-chevron-left"></i> ES6学习总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/06/js知识点总结/" rel="prev" title="js知识点总结">
+                js知识点总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.png"
+                alt="蓝色味道丶" />
+            
+              <p class="site-author-name" itemprop="name">蓝色味道丶</p>
+              <p class="site-description motion-element" itemprop="description">云深无迹。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liuxilei" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:liuxilei@qq.com" target="_blank" title="Email">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Email</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关知识点："><span class="nav-number">1.</span> <span class="nav-text">相关知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6"><span class="nav-number">1.0.1.</span> <span class="nav-text">ES6:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node-js"><span class="nav-number">1.0.2.</span> <span class="nav-text">node.js:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#webpack"><span class="nav-number">1.0.3.</span> <span class="nav-text">webpack:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window命令："><span class="nav-number">1.0.4.</span> <span class="nav-text">window命令：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React"><span class="nav-number"></span> <span class="nav-text">React:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#React基础知识、"><span class="nav-number">1.</span> <span class="nav-text">React基础知识、</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React组件基础、"><span class="nav-number">2.</span> <span class="nav-text">React组件基础、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一：初步配置React开发环境"><span class="nav-number">2.1.</span> <span class="nav-text">一：初步配置React开发环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack-热加载配置"><span class="nav-number">2.2.</span> <span class="nav-text">webpack 热加载配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目热加载"><span class="nav-number">2.3.</span> <span class="nav-text">项目热加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二：虚拟DOM概念"><span class="nav-number">2.4.</span> <span class="nav-text">二：虚拟DOM概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件"><span class="nav-number">2.5.</span> <span class="nav-text">组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三：React多组件嵌套"><span class="nav-number">2.6.</span> <span class="nav-text">三：React多组件嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四：JSX内置表达式"><span class="nav-number">2.7.</span> <span class="nav-text">四：JSX内置表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五：生命周期"><span class="nav-number">2.8.</span> <span class="nav-text">五：生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React属性与事件、"><span class="nav-number">3.</span> <span class="nav-text">React属性与事件、</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一：State-属性"><span class="nav-number">3.1.</span> <span class="nav-text">一：State 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二：Props属性"><span class="nav-number">3.2.</span> <span class="nav-text">二：Props属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三：事件与数据的双向绑定"><span class="nav-number">3.3.</span> <span class="nav-text">三：事件与数据的双向绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#事件的绑定：注意es6的语法"><span class="nav-number">3.3.1.</span> <span class="nav-text">事件的绑定：注意es6的语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子页面向父页面传递参数的方法"><span class="nav-number">3.3.2.</span> <span class="nav-text">子页面向父页面传递参数的方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四：可复用组件，真正让React开发快速、高效的地方"><span class="nav-number">3.4.</span> <span class="nav-text">四：可复用组件，真正让React开发快速、高效的地方</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Prop验证"><span class="nav-number">3.4.1.</span> <span class="nav-text">Prop验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认Prop值"><span class="nav-number">3.4.2.</span> <span class="nav-text">默认Prop值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传递所有参数的快捷方式"><span class="nav-number">3.4.3.</span> <span class="nav-text">传递所有参数的快捷方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五：组件的Refs"><span class="nav-number">3.5.</span> <span class="nav-text">五：组件的Refs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作DOM的两种方法"><span class="nav-number">3.5.1.</span> <span class="nav-text">操作DOM的两种方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六：独立组件间共享Mixins"><span class="nav-number">3.6.</span> <span class="nav-text">六：独立组件间共享Mixins</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">蓝色味道丶</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
