@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[试用期工作总结]]></title>
+    <url>%2F2018%2F09%2F30%2F%E8%AF%95%E7%94%A8%E6%9C%9F%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[勿忘初心！ 中心项目遇到的问题和自己获得心得体会: return 后要跟代码，不能换行 进度条，表单数据渲染，无法获取之前存好的表单值，因为页面销毁 事件，第一个默认参数是事件对象本身，箭头函数 筛选，对象的层层调用，最好先判断调用者是否存在，以免页面崩溃 站控项目遇到的问题和自己获得心得体会: 异步解决办法promise,resolve只能返回一个参数 深拷贝：在原来对象上拷贝一个新对象，改变其引用地址，从而不影响原有对象，JSON.parse(JSON.stringify()),无法拷贝对象属性值是方法的属性 单引号括起来单引号（很瓜) 页面交互时，需要控制的状态，例如一个人的信息，用对象保存，便于后续重置。 数据类型上这里很容易出问题，比如true，可能是字符串的’true’ 利用编辑器的快捷方式，便于开发，提高自己的效率 同事的建议和帮助 工作时，不需要把很多概念都去弄得很明白，先实现功能，在做的过程中，慢慢就都清楚了，不要过分去把时间耗在不必要的思考上，这些应该在下班之后花时间去考虑。 平时出bug，可以记录下来，以便以后忘记，重复出现。自己的误区 过分去追究细节，比如中心的项目，最开始就把各种地方都要看懂，大而全，反而容易把自己陷进去，和自己已有概念发生矛盾，思想执拗进去，后续再去查询，反而全部疏通了。自己的思考 学会转换一种想法，面对比较难的项目，对自己是挑战也是进步，面对别人对自己的要求，相应的即是对自己的重要，也是可以锻炼自己的机会，怎么赢难而上，方式方法。 转换自己焦虑，专注力。 不擅长表达，就把自己该做好的事情做好。]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+      <tags>
+        <tag>job</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[less学习笔记]]></title>
+    <url>%2F2018%2F06%2F27%2Fless%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[阳光盛开的季节，是这个年龄最该有的样子。 less笔记安装过程 全局安装less，npm install less --g 命令行显示编译后结果，只展示到命令行内lessc style.less 命令行编译less到当前目录，生成csslessc style.less style.css应用变量1234@color: red;div &#123; color: @color;&#125; 编译结果123div &#123; color: red;&#125; Mixins把已有class或id样式全部应用到别的class或id里面12345678910@color: red;.add &#123; border: 1px solid #000; background: @color;&#125;.less &#123; width: 100px; height: 200px; .add;&#125; 编译结果12345678910.add &#123; border: 1px solid #000; background: red;&#125;.less &#123; width: 100px; height: 200px; border: 1px solid #000; background: red;&#125; less内.add应用时候可以.add或.add()的形式，如果不想保留编译出.add样式，可以在.add后添加(),如下12345678910@color: red;.add() &#123; border: 1px solid #000; background: @color;&#125;.less &#123; width: 100px; height: 200px; .add;&#125; 123456.less &#123; width: 100px; height: 200px; border: 1px solid #000; background: red;&#125;]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MDN学习笔记]]></title>
     <url>%2F2018%2F05%2F02%2FMDN%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[岁月还长，你心地善良，终会有一人陪你骑马喝酒走四方…… HTML部分空元素 不是所有元素都拥有开始标签，内容和结束标记. 一些元素只有一个标签，通常用来在此元素所在位置插入/嵌入一些东西 。例如：元素&lt;img&gt;是用来在元素&lt;img&gt;所在位置插入一张指定的图片。 提示：Empty elements 有时也被叫作 void elements.布尔属性 有时你会看到没有值的属性，它是合法的。这些属性被称为布尔属性，他们只能有跟它的属性名一样的属性值。例如 disabled 属性，他们可以标记表单输入使之变为不可用(变灰色)，此时用户不能向他们输入任何数据。HTML中的空白 无论你用了多少空白(包括空白字符，包括换行), 当渲染这些代码的时候，HTML解释器会将连续出现的空白字符减少为一个单独的空格符。那么为什么我们会使用那么多的空白呢? 答案就是为了可读性 —— 如果你的代码被很好地进行格式化，那么就很容易理解你的代码是怎么回事, 反之就只有聚做一团的混乱. 在我们的HTML代码中，我们让每一个嵌套的元素以两个空格缩进。 你使用什么风格来格式化你的代码取决于你 (比如所对于每层缩进使用多少个空格),但是你应该坚持使用某种风格。 元数据许多meta元素包含了name和content特性： name特性指定了meta 元素的类型; 说明该元素包含了什么类型的信息。 content指定了实际的元数据内容。 超链接使用title属性添加支持信息 您可能要添加到您的链接的另一个属性是标题；这旨在包含关于链接的补充有用信息，例如页面包含什么样的信息或需要注意的事情。 连接的标题仅当鼠标悬停在其上时才会显示，这意味着使用键盘来导航网页的人很难获取到标题信息。如果标题信息对于页面非常重要，你应该使用所有用户能都方便获取的方式来呈现，例如放在常规文本中。文档片段 超链接可以链接到html文档的特定部分（被称为文档片段），而不仅仅是文件的顶部。要做到这一点你必须首先分配一个id属性的元素到链接。通常链接到一个特定的标题是有意义的.]]></content>
