@@ -2,17 +2,6 @@
 <search>
   <entry>
     <title><![CDATA[TODO]]></title>
-    <url>%2F2018%2F11%2F13%2F%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%E4%B8%80%2F</url>
-    <content type="text"><![CDATA[函数参数的命令，比如一个ajax请求，用res作参数传递，那么下面函数内参数不要再用res命名，以免混杂，其他同理！！！ 公共的参数可以单独写到一个文件内，增加可扩展性 注意异步的顺序，所以逻辑上，把下一步的执行逻辑写在当前异步内，不过这样会一层套一层，所以可以使用Promise 扫码的时候，单选框的值会自动变换成下一项]]></content>
-      <categories>
-        <category>工作</category>
-      </categories>
-      <tags>
-        <tag>question</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[TODO]]></title>
     <url>%2F2018%2F11%2F13%2FTODO%2F</url>
     <content type="text"><![CDATA[TODO三种 TODO 事项，高优先级即一两周之内必须完成的，普通优先级是一个月之内要完成，低优先级是两个月乃至之后要完成的。 high暂无 general开始时间：2018-10-28，截止时间2018-12-31 设计模式：慕课网js设计模式(理解+笔记+代码实现)、 Learning JavaScript Design Patterns 尚学堂js视频(理解+笔记+代码实现)、 low暂无]]></content>
       <categories>
@@ -20,6 +9,17 @@
       </categories>
       <tags>
         <tag>job</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[常见问题总结一]]></title>
+    <url>%2F2018%2F11%2F13%2F%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%E4%B8%80%2F</url>
+    <content type="text"><![CDATA[做正在做的事也许是一种升华把。 函数参数的命令，比如一个ajax请求，用res作参数传递，那么下面函数内参数不要再用res命名，以免混杂，其他同理！！！ 公共的参数可以单独写到一个文件内，增加可扩展性 注意异步的顺序，所以逻辑上，把下一步的执行逻辑写在当前异步内，不过这样会一层套一层，所以可以使用Promise 扫码的时候，单选框的值会自动变换成下一项]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+      <tags>
+        <tag>question</tag>
       </tags>
   </entry>
   <entry>
