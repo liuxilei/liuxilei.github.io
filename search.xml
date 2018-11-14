@@ -56,17 +56,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[VScode自用插件]]></title>
-    <url>%2F2018%2F09%2F30%2F%E6%88%91%E7%9A%84Visual%20Studio%20Code%2F</url>
-    <content type="text"><![CDATA[努力，努力，再努力 VScode自己常用的插件 主题:Atom One Dark Theme 自动补齐标签:Auto Close Tag 自动重命名标签名:Auto Rename Tag 浏览器打开:view-in-browser sass支持： Sass todo高亮: TODO Highlight 文件图标显示: Material Icon Theme配置设置： 失焦保存开启（自动保存，文件下-&gt;）目前在用的编辑器，非常方便。]]></content>
-      <categories>
-        <category>IDE</category>
-      </categories>
-      <tags>
-        <tag>Visual Studio Code</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[sublimeText3配置]]></title>
     <url>%2F2018%2F09%2F30%2FsublimeText3%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[遥不可及的并非十年之后，而是今天之前。 首先从官网下载sublime Text3软件，sublime Text3下载下来之后破解，注册码如下—– BEGIN LICENSE —–sgbteamSingle User LicenseEA7E-11532598891CBB9 F1513E4F 1A3405C1 A865D53F115F202E 7B91AB2D 0D2A40ED 352B269B76E84F0B CD69BFC7 59F2DFEF E267328F215652A3 E88F9D8F 4C38E3BA 5B2DAAE4969624E7 DC9CD4D5 717FB40C 1B9738CF20B3C4F1 E917B5B3 87C38D9C ACCE7DD85F7EF854 86B9743C FADC04AA FB0DA5C0F913BE58 42FEA319 F954EFDD AE881E0B—— END LICENSE ——注册码使用方式菜单栏里的Help点击License然后输入如上注册码回车即可我的默认Preferences中setting为 1234567891011121314151617181920&#123; &quot;color_scheme&quot;: &quot;Packages/Color Scheme - Default/Monokai.sublime-color-scheme&quot;, &quot;font_options&quot;: [ &quot;gdi&quot; ], &quot;font_size&quot;: 14, &quot;ignored_packages&quot;: [ &quot;Vintage&quot; ], &quot;auto_close_tags&quot;: true, &quot;auto_complete&quot;: true, &quot;tab_size&quot;: 4, &quot;line_padding_bottom&quot;: 4, &quot;save_on_focus_lost&quot;: true, &quot;translate_tabs_to_spaces&quot;: true, &quot;word_wrap&quot;: true, &quot;theme&quot;: &quot;Default.sublime-theme&quot;&#125; 安装插件管理的Package Control打开View中的console（ctrl+`）然后输入如下代码 1import urllib.request,os; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), &apos;wb&apos;).write(urllib.request.urlopen( &apos;http://sublime.wbond.net/&apos; + pf.replace(&apos; &apos;,&apos;%20&apos;)).read()) 回车即可 我安装的插件 Emmet、less、sass、]]></content>
@@ -75,6 +64,17 @@
       </categories>
       <tags>
         <tag>sublimeText3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[VScode自用插件]]></title>
+    <url>%2F2018%2F09%2F30%2F%E6%88%91%E7%9A%84Visual%20Studio%20Code%2F</url>
+    <content type="text"><![CDATA[努力，努力，再努力 VScode自己常用的插件 主题:Atom One Dark Theme 自动补齐标签:Auto Close Tag 自动重命名标签名:Auto Rename Tag 浏览器打开:view-in-browser sass支持： Sass todo高亮: TODO Highlight 文件图标显示: Material Icon Theme配置设置： 失焦保存开启（自动保存，文件下-&gt;）目前在用的编辑器，非常方便。]]></content>
+      <categories>
+        <category>IDE</category>
+      </categories>
+      <tags>
+        <tag>Visual Studio Code</tag>
       </tags>
   </entry>
   <entry>
