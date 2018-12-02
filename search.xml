@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title><![CDATA[TODO]]></title>
-    <url>%2F2018%2F11%2F13%2FTODO%2F</url>
-    <content type="text"><![CDATA[TODO三种 TODO 事项，高优先级即一两周之内必须完成的，普通优先级是一个月之内要完成，低优先级是两个月乃至之后要完成的。 high暂无 general开始时间：2018-10-28，截止时间2018-12-31 设计模式：慕课网js设计模式(理解+笔记+代码实现)、 Learning JavaScript Design Patterns 尚学堂js视频(理解+笔记+代码实现)、 low暂无]]></content>
+    <url>%2F2018%2F12%2F02%2FTODO%2F</url>
+    <content type="text"><![CDATA[TODO三种 TODO 事项，now为目前一直在做的东西，work是工作需要去准备的，later是之后准备的，也不一定，算是备忘 now IFE2015春季班 work Antd熟悉，Antd-pro react、redux全家桶、待补充 页面布局、特殊对齐、待补充 websocket基础建设 electron项目搭建 later无]]></content>
       <categories>
         <category>工作</category>
       </categories>
@@ -107,8 +107,8 @@
         <category>html</category>
       </categories>
       <tags>
-        <tag>html</tag>
         <tag>MDN</tag>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -287,8 +287,8 @@
         <category>html</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>html</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
