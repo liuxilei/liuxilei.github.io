@@ -2,13 +2,24 @@
 <search>
   <entry>
     <title><![CDATA[TODO]]></title>
-    <url>%2F2018%2F12%2F09%2FTODO%2F</url>
-    <content type="text"><![CDATA[TODO三种 TODO 事项，now为目前一直在做的东西，work是工作需要去准备的，later是之后准备的，也不一定，算是备忘 now IFE2015春季班 work Antd熟悉，Antd-pro react、redux全家桶、待补充 页面布局、特殊对齐、待补充 websocket基础建设 electron项目搭建 later无]]></content>
+    <url>%2F2019%2F01%2F26%2FTODO%2F</url>
+    <content type="text"><![CDATA[TODO三种 TODO 事项，now为目前一直在做的东西，work是工作需要去做的，long-time是长期需要做的 now itlr学习路线 work Antd熟悉，Antd-pro react、redux全家桶、待补充 页面布局、特殊对齐、待补充 websocket基础建设 electron项目搭建 long-time 设计模式 数据结构 代码规范、测试、ci]]></content>
       <categories>
         <category>工作</category>
       </categories>
       <tags>
         <tag>job</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2019-1-26日记]]></title>
+    <url>%2F2019%2F01%2F26%2F2019-1-26%E6%97%A5%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[自己并没有想像中那么坚定！ 最早的目标是看完慕课网的js设计模式，做笔记，其实笔记也做了，代码也跟着敲了，但好像后续印象没那么深了，归结原因，实际用的太少，或者学了并没有应用到实际，然后是慕课网js视频，看着看着就中断了，还有计划去看google搜索排第一的javascript设计模式，最近又开始买了本JavaScript设计模式与开发实践，其实总结了原因是，看的多了，内容反而多了，想要抓住的就比较多了，反而什么都没有抓到手上，就像是最初听itlr说的，一段时期一本书，消化掉，而不是堆砌的越多，反而一无所获，反思自己这段时间自己做的这些，不要着眼太多，要抓住眼前的东西，按部就班，并不是看的越多，就会的越多，也不是书买的多，就能变得多厉害，每一步不去反复练习，后果只是浪费时间，并且一无所获，浪费的这段时间，其实可以做为自己对自己的惩罚，其实也是教训，更好的认知自己，从而变得更好。 总结：设计模式是个长久需要学习的东西，需要时不时去反复揣摩，目前可以确定了，以新买的这本书为主。然后其他学习路线的话，还是回归到itlr知乎的那个回答，变回当初那个专一的我！]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
