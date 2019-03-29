@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019-3-30日记]]></title>
+    <url>%2F2019%2F03%2F30%2F2019-3-30%E6%97%A5%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[不要丢掉最初的坚持。 1要写点什么呢，时间真的度过的蛮快的，好像自从过年前就好像把很多东西都忘记的一干二净，又开始没心没肺的生活，但是又不停的自责与反思，却不去做任何改变，跟从着结果导向，其实自己好不开心，真的很难受，不喜欢好多东西，但却无力去改变，因为要生活，如果任性的按自己想法一股脑释放出去，后续又会怎样，但我知道，迟早我会去把这一切，自己去释放出去，有个结果，后面的路希望自己保持最初的自己，不想被改变，也不会去活成生活所需要的样子，就算再难受，我也会按着我的意识去倔强，希望生活如初，我可能需要一个人独处，自己去思考某些东西了，有好多好多不开心的事情，不开心的人，不喜欢，真的心累啊，再坚持坚持嘛，攒点钱去选择自己想要的生活，加油！希望这段时光早点离开我，快进过去啦！]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[TODO]]></title>
     <url>%2F2019%2F01%2F26%2FTODO%2F</url>
     <content type="text"><![CDATA[TODO三种 TODO 事项，now为目前一直在做的东西，work是工作需要去做的，long-time是长期需要做的 now itlr学习路线 work Antd熟悉，Antd-pro react、redux全家桶、待补充 页面布局、特殊对齐、待补充 websocket基础建设 electron项目搭建 long-time 英语学习 设计模式 数据结构 代码规范、测试、ci]]></content>
@@ -309,8 +320,8 @@
         <category>html</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>html</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
